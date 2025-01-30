@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "ntFont";
+    src: url(./NT-Regular.otf) format('opentype'),
+        url(./NT-Regular.ttf) format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "ntFont";
+    src: url(./NT-Bold.otf) format('opentype'),
+        url(./NT-Bold.ttf) format('truetype');
+    font-weight: 700;
+    font-display: swap;
+}

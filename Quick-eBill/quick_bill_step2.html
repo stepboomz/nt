@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick bill</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./quick_bill_step2.css" />
+    <link rel="stylesheet" href="./../fonts/font.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="sub-header-logo">
+          <a href="https://www.ntplc.co.th/onlinestore/home">
+            <img src="./assets/images/logo-nt.png" data-sf-ec-immutable="" />
+          </a>
+        </div>
+      </div>
+    </header>
+    <div class="content-main">
+      <div class="containernopad content-main-wrapper">
+        <div class="content-header-block header-block-wrapper">
+          <div class="header1-block">
+            <div class="eservice-bill-b">
+              <p class="bill-b-text">Quick Service</p>
+            </div>
+            <div class="header-block-header-text">
+              <p class="header-header-text">NT Quick e-Bill</p>
+            </div>
+            <div class="header-block-header-text">
+              <p class="header-normal-text">สมัครง่าย สะดวก รวดเร็ว</p>
+            </div>
+            <div class="step-wrapper">
+              <div class="nt-bullet-line"></div>
+              <div class="step">
+                <div class="mock-cle"></div>
+                <p class="step-text">1.กรอกข้อมูล</p>
+              </div>
+              <div class="step">
+                <div class="mock-cle"></div>
+                <p class="step-text">2.ตรวจสอบข้อมูล<br />การทำรายการ</p>
+              </div>
+              <div class="step">
+                <div class="mock-cle"></div>
+                <p class="step-text">3.สถานะรายการ</p>
+              </div>
+            </div>
+            <div class="header-block-header-image">
+              <picture>
+                <source
+                  srcset="./assets/images/block-header-mobile.png"
+                  media="(max-width:991px)"
+                />
+                <img
+                  class=""
+                  src="./assets/images/block-header-desktop.png"
+                  alt=""
+                />
+              </picture>
+            </div>
+          </div>
+        </div>
+        <div class="content-body-block body-block-warpper">
+          <h2 class="info-title">กรุณาตรวจสอบข้อมูลให้ถูกต้อง</h2>
+          <div class="info-card">
+            
+            <div class="info-row">
+              <div class="info-label">หมายเลขบริการ</div>
+              <div class="info-value">747815882</div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">รหัสลูกค้า</div>
+              <div class="info-value">747815882</div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">ชื่อบัญชีลูกค้า</div>
+              <div class="info-value">นายจอห์น สมิธ</div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">ประเภทลูกค้า</div>
+              <div class="info-value">ลูกค้าบุคคลทั่วไป (บ้านอยู่อาศัย)</div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">ประเภทใบแจ้งค่าใช้บริการ</div>
+              <div class="info-value">Paper Bill</div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">ที่อยู่จัดส่งใบแจ้งค่าบริการ</div>
+              <div class="info-value">
+                84 หมู่10 ต.บึง อ.ศรีราชา จ.ชลบุรี 20230
+              </div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">อีเมล</div>
+              <div class="info-value">johnsmith@gmail.com</div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">เบอร์ติดต่อ</div>
+              <div class="info-value">089-999-9999</div>
+            </div>
+          </div>
+
+          <div class="checkbox-container">
+            <div class="checkbox-main">
+              <label>
+                <input type="checkbox" class="custom-checkbox" checked />
+                <span>
+                  สมัครบริการ e-Bill (ท่านจะไม่ได้รับใบแจ้งค่าบริการทางไปรษณีย์)
+                </span>
+              </label>
+            </div>
+            <div class="checkbox-main">
+              <label>
+                <input type="checkbox" class="custom-checkbox" />
+                <span>
+                  อ่านข้อตกลง
+                  เงื่อนไขการสมัครบริการใบแจ้งค่าบริการอิเล็กทรอนิกส์ e-Bill
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="button-container">
+            <button
+              class="btn btn-cancel"
+              onclick="window.location.href='quick_bill.html'"
+            >
+              ยกเลิก
+            </button>
+            <button
+              class="btn btn-submit"
+              onclick="window.location.href='quick_bill_step3.html'"
+            >
+              ส่งข้อมูล
+            </button>
+          </div>
+        
+        
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      © 2023 National Telecom Public Company Limited. All Rights Reserved.
+    </footer>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+</html>

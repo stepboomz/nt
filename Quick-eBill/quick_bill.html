@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick bill</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./quick_bill.css" />
+    <link rel="stylesheet" href="./../fonts/font.css" />
+
+    <script>
+      function toggleCollapsible(element) {
+        const content = element.nextElementSibling;
+        const icon = element.querySelector(".toggle-icon");
+        content.classList.toggle("collapsed");
+        icon.classList.toggle("collapsed");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const content = document.querySelector(".collapsible-content");
+        const icon = document.querySelector(".toggle-icon");
+        if (content) content.classList.remove("collapsed");
+        if (icon) icon.classList.remove("collapsed");
+      });
+
+      ///check service
+      function validateServiceNumber(input) {
+        input.value = input.value.replace(/[^0-9]/g, "");
+
+        const value = input.value.trim();
+        const errorElement = document.getElementById("serviceNumberError");
+
+        if (!value) {
+          input.classList.add("error");
+          errorElement.style.display = "block";
+        } else {
+          input.classList.remove("error");
+          errorElement.style.display = "none";
+        }
+
+        checkFormValidity();
+      }
+
+      ///check idnumber passport
+      function validateIdNumber(input) {
+        input.value = input.value.replace(/[^A-Za-z0-9]/g, "");
+
+        const value = input.value.trim();
+        const errorElement = document.getElementById("idNumberError");
+
+        const isValid = value.length >= 7 && value.length <= 13;
+
+        if (!isValid) {
+          input.classList.add("error");
+          errorElement.style.display = "block";
+        } else {
+          input.classList.remove("error");
+          errorElement.style.display = "none";
+        }
+
+        checkFormValidity();
+      }
+
+      //check form  if disable button
+      function checkFormValidity() {
+        const serviceNumber = document
+          .getElementById("serviceNumber")
+          .value.trim();
+        const idNumber = document.getElementById("idNumber").value.trim();
+        const submitBtn = document.getElementById("submitBtn");
+
+        const isValid =
+          serviceNumber &&
+          idNumber &&
+          idNumber.length >= 7 &&
+          idNumber.length <= 13;
+
+        submitBtn.disabled = !isValid;
+      }
+
+      // validateform button go to page 2
+      function validateForm(event) {
+        event.preventDefault();
+
+        const serviceNumber = document
+          .getElementById("serviceNumber")
+          .value.trim();
+        const idNumber = document.getElementById("idNumber").value.trim();
+
+        if (!serviceNumber) {
+          validateServiceNumber(document.getElementById("serviceNumber"));
+          return false;
+        }
+
+        if (!idNumber || idNumber.length < 7 || idNumber.length > 13) {
+          validateIdNumber(document.getElementById("idNumber"));
+          return false;
+        }
+
+        // alert("Quick-eBill step2");
+        window.location.href = "quick_bill_step2.html";
+        return true;
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("ebillForm");
+        const inputs = form.querySelectorAll("input");
+
+        inputs.forEach((input) => {
+          if (input.id === "serviceNumber") {
+            validateServiceNumber(input);
+          } else if (input.id === "idNumber") {
+            validateIdNumber(input);
+          }
+        });
+      });
+
+      function showExample() {
+        document.getElementById("exampleModal").style.display = "block";
+      }
+
+      function closeExample() {
+        document.getElementById("exampleModal").style.display = "none";
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function (event) {
+        const modal = document.getElementById("exampleModal");
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-wrapper">
+        <div class="logo-link">
+          <img src="./assets/images/logo-nt.png" alt="NT Logo" class="logo-img" />
+        </div>
+        <div class="service-text">eService</div>
+        <div class="lang-section">
+          <span>EN</span>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="27" viewBox="0 0 26 27">
+            <image id="US_Flag" data-name="US Flag" width="26" height="27" xlink:href="data:image/png;base64,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"/>
+          </svg>
+                  </div>
+      </div>
+    </header>
+    <div class="content-main">
+      <div class="containernopad content-main-wrapper">
+        <div class="content-header-block header-block-wrapper">
+          <div class="header1-block">
+            <div class="eservice-bill-b">
+              <p class="bill-b-text">Quick Service</p>
+            </div>
+            <div class="header-block-header-text">
+              <p class="header-header-text">NT Quick e-Bill</p>
+            </div>
+            <div class="header-block-header-text">
+              <p class="header-normal-text">สมัครง่าย สะดวก รวดเร็ว</p>
+            </div>
+            <div class="step-wrapper">
+              <div class="nt-bullet-line"></div>
+              <div class="step">
+                <div class="mock-cle"></div>
+                <p class="step-text">1.กรอกข้อมูล</p>
+              </div>
+              <div class="step">
+                <div class="mock-cle"></div>
+                <p class="step-text">2.ตรวจสอบข้อมูล<br />การทำรายการ</p>
+              </div>
+              <div class="step">
+                <div class="mock-cle"></div>
+                <p class="step-text">3.สถานะรายการ</p>
+              </div>
+            </div>
+            <div class="header-block-header-image">
+              <picture>
+                <source
+                  srcset="./assets/images/paper_register-mobile.png"
+                  media="(max-width:991px)"
+                />
+                <img
+                  class=""
+                  src="./assets/images/paper_register-desktop.png"
+                  alt=""
+                />
+              </picture>
+            </div>
+          </div>
+        </div>
+        <div class="content-body-block body-block-warpper">
+          <div class="form-container">
+            <form id="ebillForm" onsubmit="return validateForm(event)">
+              <div class="form-group">
+                <div class="label-container">
+                  <label class="form-label">กรอกหมายเลขบริการ</label>
+                  <a class="example-link" onclick="showExample()"
+                    >คลิกดูตัวอย่าง</a
+                  >
+                </div>
+                <input
+                  type="text"
+                  class="form-input"
+                  id="serviceNumber"
+                  placeholder="กรุณากรอกหมายเลขบริการ"
+                  oninput="validateServiceNumber(this)"
+                />
+                <div id="serviceNumberError" class="error-message">
+                  กรุณากรอกหมายเลขบริการ
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label"
+                  >กรอกหมายเลขบัตรประชาชน/หนังสือเดินทาง/หมายเลขนิติบุคคล</label
+                >
+
+                <input
+                  type="text"
+                  class="form-input"
+                  id="idNumber"
+                  placeholder="หมายเลขบัตรประชาชน/หนังสือเดินทาง/หมายเลขนิติบุคคล"
+                  oninput="validateIdNumber(this)"
+                  maxlength="13"
+                />
+                <div id="idNumberError" class="error-message">
+                  กรุณากรอกหมายเลขบัตรประชาชน/หนังสือเดินทาง 7-13 หลัก
+                </div>
+
+                <p class="form-hint">
+                  <br />
+                  • บุคคลทั่วไป กรอกหมายเลขบัตรประชาชน (หรือถือต่างด้าว
+                  ให้ใช้หมายเลขหนังสือเดินทาง)
+                </p>
+                <p class="form-hint">• นิติบุคคล กรอกหมายเลขนิติบุคคล</p>
+              </div>
+
+              <button type="submit" class="submit-button" id="submitBtn">
+                ตรวจสอบข้อมูล
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="collapsible">
+          <div class="collapsible-header" onclick="toggleCollapsible(this)">
+            <h3>*เงื่อนไขบริการใบแจ้งค่าใช้บริการทางอีเมล (e-Bill)</h3>
+            <div class="toggle-icon"></div>
+          </div>
+          <div class="collapsible-content">
+            <div class="terms-content">
+              <p>
+                ใบแจ้งค่าบริการทางอีเมล หรือ e-Bill
+                ให้คุณรู้ค่าบริการรายเดือนจาก NT(TOT) ได้สะดวกรวดเร็ว เพียงให้
+                e-Bill เพื่อรับใบแจ้งค่าบริการทางอีเมลแทนการจัดส่งทางไปรษณีย์
+                สามารถเข้าใช้บริการได้เฉพาะเจ้าของเลขหมายบริการหรือผู้ได้รับมอบอำนาจจากเจ้าของเลขหมายบริการเท่านั้น
+                (บุคคลทั่วไป/นิติบุคคล)
+              </p>
+
+              <h4 style="margin: 20px 0 10px">ช่องทางการสมัคร e-Bill</h4>
+              <p>1. สมัครออนไลน์ได้ที่</p>
+              <ul>
+                <li>
+                  NT eService
+                  <a href="https://www.nteservice.com/eservice"
+                    >https://www.nteservice.com/eservice</a
+                  >
+                </li>
+                <li>
+                  Quick Service
+                  <a href="https://quickebill.nteservice.com"
+                    >https://quickebill.nteservice.com</a
+                  >
+                </li>
+              </ul>
+
+              <p style="color: #ff4444; margin-top: 20px">
+                ***กรุณาจัดเตรียมเอกสารดังนี้
+              </p>
+              <ul>
+                <li>
+                  แบบฟอร์มขอสมัครใช้บริการ NT e-Bill สำหรับนิติบุคคล
+                  (องค์กร/บริษัท)
+                  <a href="#" style="color: #26a69a"
+                    >คลิกที่นี่เพื่อดาวน์โหลดเอกสาร</a
+                  >
+                </li>
+                <li>
+                  เอกสารรับรองการเป็นนิติบุคคลที่มีกำหนดไม่เกิน 90 วัน
+                  หรือหนังสือรับรอง/มอบอำนาจ จากหน่วยงาน องค์กรของรัฐ
+                </li>
+                <li>
+                  สำเนาบัตรประจำตัวประชาชนของผู้มีอำนาจ /
+                  ผู้มีสิทธิดำเนินการขององค์กร พร้อมลงนามรับรองสำเนาถูกต้อง
+                  และระบุข้อความด้านล่างของสำเนา "เพื่อมอบอำนาจเป็นสิทธิ์ให้
+                  (ชื่อ-สกุล ผู้สมัครใช้บริการ) สมัครใช้บริการ e-Bill
+                  ของบริษัท/องค์กรผ่านระบบ NT eService"
+                </li>
+                <li>
+                  สำเนาบัตรประชาชนของตัวท่านเอง (ผู้ได้รับมอบอำนาจให้สมัครฯ)
+                  พร้อมลงลายมือชื่อสำเนาถูกต้อง และระบุข้อความด้านล่างของสำเนา
+                  "เพื่อสมัครใช้บริการ e-Bill ของบริษัท/องค์กร ผ่านระบบ NT
+                  eService"
+                </li>
+              </ul>
+
+              <p>2. สมัครด้วยตนเองที่ ศูนย์บริการลูกค้า NT ทุกแห่งทั่วประเทศ</p>
+              <p>3. สมัครผ่าน NT Contact Center โทร 1888</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="exampleModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeExample()">&times;</span>
+        <h2 style="align-self: center; font-weight: bold">
+          ตัวอย่างหมายเลขบริการลูกค้า
+        </h2>
+        <img
+          src="assets/images/ex_bill.png"
+          alt="Example service number"
+          class="example-image"
+        />
+      </div>
+    </div>
+    <footer class="footer">
+      © 2023 National Telecom Public Company Limited. All Rights Reserved.
+    </footer>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+</html>
