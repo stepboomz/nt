@@ -18,12 +18,28 @@ p {
     line-height: 1;
 }
 
-/* header {
-    height: 73px;
-    width: 100%;
-    background-color: #ffffff;
-    padding: 10px;
-} */
+.mock-cle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid  #000000;
+  background-color:  #ffdd6a;
+  position: relative;
+  display: grid;
+  place-content: center;
+}
+
+.mock-cle.active {
+  border: 1px solid  #000000;
+  background-color:  #000000;
+}
+
+.header-block-wrapper .header1-block .header-block-header-image-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .site-header {
   width: 100%;
   height: 60px;
@@ -113,12 +129,12 @@ header .sub-header-logo img {
     width: 100%;
 }
 
+/* banner  */
 .content-header-block {
-    margin: auto;
-    height: 200px;
-    /* max-width: 800px; */
-    background-color: #FCCC03;
-    border-radius: 10px 10px 0 0;
+  margin: auto;
+  height: 200px;
+  background-image: url('./assets/images/desktop-hero-banner.png');
+  border-radius: 10px 10px 0 0;
 }
 
 .content-body-block {
@@ -137,15 +153,16 @@ header .sub-header-logo img {
     height: 270px;
 }
 
+/* banner  */
 .header-block-wrapper .header1-block {
-    height: 100%;
-    background-color: #FCCC03;
-    border-radius: 20px 20px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* padding: 0 6rem; */
+  height: 100%;
+  /* background-color: var(--color-yellow-ci); */
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 0 6rem; */
 }
 
 .header-block-wrapper .header1-block .header-block-header-text .header-header-text {
@@ -164,7 +181,7 @@ header .sub-header-logo img {
 
 .header-block-wrapper .header1-block .header-block-header-image {
     position: absolute;
-    top: 6rem;
+    top: 5rem;
     right: 0;
 }
 
@@ -325,19 +342,12 @@ header .sub-header-logo img {
     }
 }
 
-.mock-cle {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 1px solid #000000;
-    background-color: #000000;
-    position: relative;
-}
+
 
 /* FROME */
 .form-container {
     background: white;
-    padding: 2rem;
+    /* padding: 2rem; */
     border-radius: 0 0 20px 20px;
     margin: 0 auto 60px;
     max-width: 800px;
@@ -489,7 +499,7 @@ header .sub-header-logo img {
   }
 
   .form-input.error {
-    border-color: #dc3545;
+    border-color: #333;
   }
 
   .submit-button:disabled {
