@@ -241,13 +241,12 @@
         </div>
         <div class="content-body-block body-block-warpper">
           <div class="form-container">
+            <h2 class="form-title">กรุณากรอกข้อมูล</h2>
             <form id="ebillForm" onsubmit="return validateForm(event)">
               <div class="form-group">
                 <div class="label-container">
-                  <label class="form-label">กรอกหมายเลขบริการ</label>
-                  <a class="example-link" onclick="showExample()"
-                    >คลิกดูตัวอย่าง</a
-                  >
+                  <label class="form-label">กรอกหมายเลขบริการ <span class="required">*</span></label>
+                  <a class="example-link" onclick="showExample()">คลิกดูตัวอย่าง</a>
                 </div>
                 <input
                   type="text"
@@ -260,12 +259,11 @@
                   กรุณากรอกหมายเลขบริการ
                 </div>
               </div>
-
+          
               <div class="form-group">
-                <label class="form-label"
-                  >กรอกหมายเลขบัตรประชาชน/หนังสือเดินทาง/หมายเลขนิติบุคคล</label
-                >
-
+                <label class="form-label">
+                  กรอกหมายเลขบัตรประชาชน/หนังสือเดินทาง/หมายเลขนิติบุคคล <span class="required">*</span>
+                </label>
                 <input
                   type="text"
                   class="form-input"
@@ -277,24 +275,29 @@
                 <div id="idNumberError" class="error-message">
                   กรุณากรอกหมายเลขบัตรประชาชน/หนังสือเดินทาง 7-13 หลัก
                 </div>
-
-                <p class="form-hint">
-                  <br />
+          
+                <p class="form-hint id-hint">
                   • บุคคลทั่วไป กรอกหมายเลขบัตรประชาชน (หรือถือต่างด้าว
                   ให้ใช้หมายเลขหนังสือเดินทาง)
                 </p>
                 <p class="form-hint">• นิติบุคคล กรอกหมายเลขนิติบุคคล</p>
               </div>
-
+          
               <button type="submit" class="submit-button" id="submitBtn">
                 ตรวจสอบข้อมูล
               </button>
+              <div class="recaptcha-notice">
+                <p class="recaptcha-text">
+                  This site is protected by reCAPTCHA and the Google<br>
+                  <a href="#" class="recaptcha-link">Privacy Policy</a> and <a href="#" class="recaptcha-link">Terms of Service</a> apply.
+                </p>
+              </div>
             </form>
           </div>
         </div>
         <div class="collapsible">
           <div class="collapsible-header" onclick="toggleCollapsible(this)">
-            <h3>*เงื่อนไขบริการใบแจ้งค่าใช้บริการทางอีเมล (e-Bill)</h3>
+            <h3 style="  font-size: 24px;font-weight: bold;">*เงื่อนไขบริการใบแจ้งค่าใช้บริการทางอีเมล (e-Bill)</h3>
             <div class="toggle-icon"></div>
           </div>
           <div class="collapsible-content">
@@ -375,7 +378,8 @@
       </div>
     </div>
     <footer class="footer">
-      © 2023 National Telecom Public Company Limited. All Rights Reserved.
+      <div class="footer-text">© 2022 National Telecom Public Company Limited. All Rights Reserved.</div>
+      <div class="footer-browser-support">เว็บไซต์สามารถใช้งานได้ดีกับ Internet Explorer 10 ขึ้นไป หรือ Google Chrome / Firefox เวอร์ชั่นล่าสุด</div>
     </footer>
   </body>
   <script
