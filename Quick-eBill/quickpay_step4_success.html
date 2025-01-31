@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick bill</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./quickpay_step4_success.css" />
+    <link rel="stylesheet" href="./../fonts/font.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-wrapper">
+        <div class="logo-link">
+          <img
+            src="./assets/images/logo-nt.png"
+            alt="NT Logo"
+            class="logo-img"
+          />
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          width="141"
+          height="26"
+          viewBox="0 0 141 26"
+        >
+          <defs>
+            <pattern
+              id="pattern"
+              preserveAspectRatio="none"
+              width="100%"
+              height="100%"
+              viewBox="0 0 282 53"
+            >
+              <image
+                width="282"
+                height="53"
+                xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARoAAAA1CAYAAAHpORR7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDcuMS1jMDAwIDc5LmRhYmFjYmIsIDIwMjEvMDQvMTQtMDA6Mzk6NDQgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6NjI4M2IyYTItYmIzYS00M2JlLWIyZDQtOGQ2YjMxN2ZiOGY3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkQ2RTQzNTg3MTc5QjExRUM5NUJCRjVDNkE0MjlGQ0UzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkQ2RTQzNTg2MTc5QjExRUM5NUJCRjVDNkE0MjlGQ0UzIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCAyMi41IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NjI4M2IyYTItYmIzYS00M2JlLWIyZDQtOGQ2YjMxN2ZiOGY3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjYyODNiMmEyLWJiM2EtNDNiZS1iMmQ0LThkNmIzMTdmYjhmNyIv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"
+              />
+            </pattern>
+          </defs>
+          <rect
+            id="eservice-logo"
+            width="90"
+            height="17"
+            fill="url(#pattern)"
+          />
+        </svg>
+
+        <div class="lang-section">
+          <span>EN</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="26"
+            height="27"
+            viewBox="0 0 26 27"
+          >
+            <image
+              id="US_Flag"
+              data-name="US Flag"
+              width="26"
+              height="27"
+              xlink:href="data:image/png;base64,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"
+            />
+          </svg>
+        </div>
+      </div>
+    </header>
+    <div class="content-main">
+      <div class="containernopad content-main-wrapper">
+        <div class="container">
+          <img src="./assets/images/quickpay_sucess.svg" alt="" />
+
+          <h1 class="title">รายการชำระสำเร็จ</h1>
+          <p class="subtitle">
+            ใบกำกับภาษี/ ใบเสร็จรับเงินอิเล็กทรอนิกส์<br />(E-Tax/ E-Receipt)
+            จะถูกส่งไปยัง SMS/ EMAIL ที่ท่านให้ไว้<br />ขอบคุณที่ใช้บริการ
+          </p>
+          <button class="back-button">กลับหน้าหลัก</button>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-text">
+        © 2022 National Telecom Public Company Limited. All Rights Reserved.
+      </div>
+      <div class="footer-browser-support">
+        เว็บไซต์สามารถใช้งานได้ดีกับ Internet Explorer 10 ขึ้นไป หรือ Google
+        Chrome / Firefox เวอร์ชั่นล่าสุด
+      </div>
+    </footer>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+</html>
