@@ -43,7 +43,7 @@ p {
 .site-header {
   width: 100%;
   height: 60px;
-  background-color: #fff;
+  background-color: #F2F2F2;
   border-bottom: 1px solid #e6e6e6;
 }
 
@@ -117,11 +117,14 @@ header .sub-header-logo img {
   width: 100%;
 }
 
+
 .content-main {
   background-color: lightgray;
   min-height: calc(100vh - 73px);
   width: 100%;
   padding: 4rem 0;
+  background-size: cover;
+  background-image: url('./assets/images/BG.png');
 }
 
 .content-main-wrapper {
@@ -224,13 +227,14 @@ header .sub-header-logo img {
 }
 
 .eservice-bill-b {
-  width: 130px;
-  height: 35px;
-  background-color: darkcyan;
-  display: grid;
-  place-content: center;
-  border-radius: 20px;
-  margin-bottom: 10px;
+    width: 130px;
+    height: 35px;
+    background: #2ebf9b;
+    background: linear-gradient(245deg, #2ebf9b 0%, #009896 100%);
+    display: grid;
+    place-content: center;
+    border-radius: 20px;
+    margin-bottom: 10px;
 }
 
 .eservice-bill-b .bill-b-text {
@@ -379,7 +383,8 @@ header .sub-header-logo img {
   width: 100%;
   padding: 0.8rem;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 25px;
+  padding: 7.5px 15px;
   font-size: 1rem;
 }
 .required {
@@ -518,7 +523,7 @@ header .sub-header-logo img {
 /* check error*/
 .error-message {
   color: #dc3545;
-  font-size: 12px;
+  font-size: 15px;
   margin-top: 4px;
   display: none;
 }

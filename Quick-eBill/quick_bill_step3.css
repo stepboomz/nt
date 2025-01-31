@@ -122,7 +122,10 @@ header .sub-header-logo img {
   min-height: calc(100vh - 73px);
   width: 100%;
   padding: 4rem 0;
+  background-size: cover;
+  background-image: url('./assets/images/BG.png');
 }
+
 
 .content-main-wrapper {
   margin: auto;
@@ -220,13 +223,13 @@ justify-content: center;
 .eservice-bill-b {
   width: 130px;
   height: 35px;
-  background-color: darkcyan;
+  background: #2ebf9b;
+  background: linear-gradient(245deg, #2ebf9b 0%, #009896 100%);
   display: grid;
   place-content: center;
   border-radius: 20px;
   margin-bottom: 10px;
 }
-
 .eservice-bill-b .bill-b-text {
   font-size: var(--desc-size);
   color: #ffffff;
