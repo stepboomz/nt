@@ -96,15 +96,6 @@
         display: flex;
         justify-content: center;
     }
-
-    .header-mobile  .lang-wraper {
-        display: flex;
-        align-items: center;
-    }
-
-    .header-mobile  .lang-wraper img {
-        margin-left: 0.5rem;
-    }
     
     .header-mobile .logo-wrapper > div:first-child {
         justify-content: flex-start;
