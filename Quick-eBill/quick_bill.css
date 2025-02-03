@@ -614,7 +614,7 @@ header .sub-header-logo img {
 .recaptcha-link:hover {
   text-decoration: underline;
 }
-
+/* 
 .footer {
   text-align: center;
   padding: 1rem;
@@ -631,4 +631,4 @@ header .sub-header-logo img {
 .footer-browser-support {
   color: #e0c636; 
   font-size: 0.875rem;
-}
+} */
