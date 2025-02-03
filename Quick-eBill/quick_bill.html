@@ -12,60 +12,200 @@
     />
     <link rel="stylesheet" href="./quick_bill.css" />
     <link rel="stylesheet" href="./../fonts/font.css" />
-    <link rel="stylesheet" href="./header.css">
-    <link rel="stylesheet" href="./footer.css">
+    <link rel="stylesheet" href="./header.css" />
+    <link rel="stylesheet" href="./footer.css" />
+    <script>
+      function toggleCollapsible(element) {
+        const content = element.nextElementSibling;
+        const icon = element.querySelector(".toggle-icon");
+        content.classList.toggle("collapsed");
+        icon.classList.toggle("collapsed");
+      }
 
+      document.addEventListener("DOMContentLoaded", function () {
+        const content = document.querySelector(".collapsible-content");
+        const icon = document.querySelector(".toggle-icon");
+        if (content) content.classList.remove("collapsed");
+        if (icon) icon.classList.remove("collapsed");
+      });
+
+      ///check service
+      function validateServiceNumber(input) {
+        input.value = input.value.replace(/[^0-9]/g, "");
+
+        const value = input.value.trim();
+        const errorElement = document.getElementById("serviceNumberError");
+
+        if (!value) {
+          input.classList.add("error");
+          errorElement.style.display = "block";
+        } else {
+          input.classList.remove("error");
+          errorElement.style.display = "none";
+        }
+
+        checkFormValidity();
+      }
+
+      ///check idnumber passport
+      function validateIdNumber(input) {
+        input.value = input.value.replace(/[^A-Za-z0-9]/g, "");
+
+        const value = input.value.trim();
+        const errorElement = document.getElementById("idNumberError");
+
+        const isValid = value.length >= 7 && value.length <= 13;
+
+        if (!isValid) {
+          input.classList.add("error");
+          errorElement.style.display = "block";
+        } else {
+          input.classList.remove("error");
+          errorElement.style.display = "none";
+        }
+
+        checkFormValidity();
+      }
+
+      //check form  if disable button
+      function checkFormValidity() {
+        const serviceNumber = document
+          .getElementById("serviceNumber")
+          .value.trim();
+        const idNumber = document.getElementById("idNumber").value.trim();
+        const submitBtn = document.getElementById("submitBtn");
+
+        const isValid =
+          serviceNumber &&
+          idNumber &&
+          idNumber.length >= 7 &&
+          idNumber.length <= 13;
+
+        submitBtn.disabled = !isValid;
+      }
+
+      // validateform button go to page 2
+      function validateForm(event) {
+        event.preventDefault();
+
+        const serviceNumber = document
+          .getElementById("serviceNumber")
+          .value.trim();
+        const idNumber = document.getElementById("idNumber").value.trim();
+
+        if (!serviceNumber) {
+          validateServiceNumber(document.getElementById("serviceNumber"));
+          return false;
+        }
+
+        if (!idNumber || idNumber.length < 7 || idNumber.length > 13) {
+          validateIdNumber(document.getElementById("idNumber"));
+          return false;
+        }
+
+        // alert("Quick-eBill step2");
+        window.location.href = "quick_bill_step2.html";
+        return true;
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("ebillForm");
+        const inputs = form.querySelectorAll("input");
+
+        inputs.forEach((input) => {
+          if (input.id === "serviceNumber") {
+            validateServiceNumber(input);
+          } else if (input.id === "idNumber") {
+            validateIdNumber(input);
+          }
+        });
+      });
+
+      function showExample() {
+        document.getElementById("exampleModal").style.display = "block";
+      }
+
+      function closeExample() {
+        document.getElementById("exampleModal").style.display = "none";
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function (event) {
+        const modal = document.getElementById("exampleModal");
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
   </head>
   <body>
     <header class="header-desktop">
       <div class="container">
-          <div class="sub-header-logo">
-              <div class="logo-wrapper">
-                  <div>
-                      <a href="https://www.ntplc.co.th/onlinestore/home">
-                          <img src="./assets/images/header-footer-images/nt-logo-desktop.svg" data-sf-ec-immutable="">
-                      </a>
-                  </div>
-                  <div>
-                      <a href="https://www.ntplc.co.th/onlinestore/home">
-                          <img src="./assets/images/header-footer-images/eservice-logo-desktop.svg" data-sf-ec-immutable="">
-                      </a>
-                  </div>
-                  <div>
-                      <div class="lang-wraper">
-                          <p class="wrapper-desc-text">EN</p>
-                          <img src="./assets/images/header-footer-images/US-Flag.svg" data-sf-ec-immutable="">
-                      </div>
-                  </div>
+        <div class="sub-header-logo">
+          <div class="logo-wrapper">
+            <div>
+              <a href="https://www.ntplc.co.th/onlinestore/home">
+                <img
+                  src="./assets/images/header-footer-images/nt-logo-desktop.svg"
+                  data-sf-ec-immutable=""
+                />
+              </a>
+            </div>
+            <div>
+              <a href="https://www.ntplc.co.th/onlinestore/home">
+                <img
+                  src="./assets/images/header-footer-images/eservice-logo-desktop.svg"
+                  data-sf-ec-immutable=""
+                />
+              </a>
+            </div>
+            <div>
+              <div class="lang-wraper">
+                <p class="wrapper-desc-text">EN</p>
+                <img
+                  src="./assets/images/header-footer-images/US-Flag.svg"
+                  data-sf-ec-immutable=""
+                />
               </div>
+            </div>
           </div>
+        </div>
       </div>
-  </header>
-  <header class="header-mobile">
+    </header>
+    <header class="header-mobile">
       <div class="container">
-          <div class="sub-header-logo">
-              <div class="logo-wrapper">
-                  <div>
-                      <div class="lang-wraper">
-                          <p class="wrapper-desc-text">EN</p>
-                          <img src="./assets/images/header-footer-images/US-Flag.svg" data-sf-ec-immutable="">
-                      </div>
-                  </div>
-                  <div>
-                      <a href="https://www.ntplc.co.th/onlinestore/home">
-                          <img src="./assets/images/header-footer-images/eservice-logo-mobile.svg" data-sf-ec-immutable="">
-                      </a>
-                  </div>
-                  <div>
-                      <a href="https://www.ntplc.co.th/onlinestore/home">
-                          <img src="./assets/images/header-footer-images/nt-logo-mobile.svg" data-sf-ec-immutable="">
-                      </a>
-                  </div>
+        <div class="sub-header-logo">
+          <div class="logo-wrapper">
+            <div>
+              <div class="lang-wraper">
+                <p class="wrapper-desc-text">EN</p>
+                <img
+                  src="./assets/images/header-footer-images/US-Flag.svg"
+                  data-sf-ec-immutable=""
+                />
               </div>
+            </div>
+            <div>
+              <a href="https://www.ntplc.co.th/onlinestore/home">
+                <img
+                  src="./assets/images/header-footer-images/eservice-logo-mobile.svg"
+                  data-sf-ec-immutable=""
+                />
+              </a>
+            </div>
+            <div>
+              <a href="https://www.ntplc.co.th/onlinestore/home">
+                <img
+                  src="./assets/images/header-footer-images/nt-logo-mobile.svg"
+                  data-sf-ec-immutable=""
+                />
+              </a>
+            </div>
           </div>
+        </div>
       </div>
-  </header>
- 
+    </header>
+
     <div class="content-main">
       <div class="containernopad content-main-wrapper">
         <div class="content-header-block header-block-wrapper">
@@ -82,9 +222,8 @@
             <div class="step-wrapper">
               <div class="nt-bullet-line"></div>
               <div class="step">
-                <div class="mock-cle active ">
+                <div class="mock-cle active">
                   <img src="./assets/images/step1.svg" alt="" />
-
                 </div>
                 <p class="step-text">1.กรอกข้อมูล</p>
               </div>
@@ -95,7 +234,7 @@
                 <p class="step-text">2.ตรวจสอบข้อมูล<br />การทำรายการ</p>
               </div>
               <div class="step">
-                <div class="mock-cle ">
+                <div class="mock-cle">
                   <img src="./assets/images/step3.svg" alt="" />
                 </div>
                 <p class="step-text">3.สถานะรายการ</p>
@@ -135,8 +274,12 @@
             <form id="ebillForm" onsubmit="return validateForm(event)">
               <div class="form-group">
                 <div class="label-container">
-                  <label class="form-label">กรอกหมายเลขบริการ <span class="required">*</span></label>
-                  <a class="example-link" onclick="showExample()">คลิกดูตัวอย่าง</a>
+                  <label class="form-label"
+                    >กรอกหมายเลขบริการ <span class="required">*</span></label
+                  >
+                  <a class="example-link" onclick="showExample()"
+                    >คลิกดูตัวอย่าง</a
+                  >
                 </div>
                 <input
                   type="text"
@@ -149,10 +292,11 @@
                   กรุณากรอกหมายเลขบริการ
                 </div>
               </div>
-          
+
               <div class="form-group">
                 <label class="form-label">
-                  กรอกหมายเลขบัตรประชาชน/หนังสือเดินทาง/หมายเลขนิติบุคคล <span class="required">*</span>
+                  กรอกหมายเลขบัตรประชาชน/หนังสือเดินทาง/หมายเลขนิติบุคคล
+                  <span class="required">*</span>
                 </label>
                 <input
                   type="text"
@@ -165,21 +309,22 @@
                 <div id="idNumberError" class="error-message">
                   กรุณากรอกหมายเลขบัตรประชาชน/หนังสือเดินทาง 7-13 หลัก
                 </div>
-          
+
                 <p class="form-hint id-hint">
                   • บุคคลทั่วไป กรอกหมายเลขบัตรประชาชน (หรือถือต่างด้าว
                   ให้ใช้หมายเลขหนังสือเดินทาง)
                 </p>
                 <p class="form-hint">• นิติบุคคล กรอกหมายเลขนิติบุคคล</p>
               </div>
-          
+
               <button type="submit" class="submit-button" id="submitBtn">
                 ตรวจสอบข้อมูล
               </button>
               <div class="recaptcha-notice">
                 <p class="recaptcha-text">
-                  This site is protected by reCAPTCHA and the Google<br>
-                  <a href="#" class="recaptcha-link">Privacy Policy</a> and <a href="#" class="recaptcha-link">Terms of Service</a> apply.
+                  This site is protected by reCAPTCHA and the Google<br />
+                  <a href="#" class="recaptcha-link">Privacy Policy</a> and
+                  <a href="#" class="recaptcha-link">Terms of Service</a> apply.
                 </p>
               </div>
             </form>
@@ -187,7 +332,9 @@
         </div>
         <div class="collapsible">
           <div class="collapsible-header" onclick="toggleCollapsible(this)">
-            <h3 style="  font-size: 24px;font-weight: bold;">*เงื่อนไขบริการใบแจ้งค่าใช้บริการทางอีเมล (e-Bill)</h3>
+            <h3 style="font-size: 24px; font-weight: bold">
+              *เงื่อนไขบริการใบแจ้งค่าใช้บริการทางอีเมล (e-Bill)
+            </h3>
             <div class="toggle-icon"></div>
           </div>
           <div class="collapsible-content">
@@ -200,7 +347,11 @@
                 (บุคคลทั่วไป/นิติบุคคล)
               </p>
 
-              <h4 style="margin: 20px 0 10px; font-size: 24px; font-weight: bold;">ช่องทางการสมัคร e-Bill</h4>
+              <h4
+                style="margin: 20px 0 10px; font-size: 24px; font-weight: bold"
+              >
+                ช่องทางการสมัคร e-Bill
+              </h4>
               <p>1. สมัครออนไลน์ได้ที่</p>
               <ul>
                 <li>
@@ -246,8 +397,6 @@
                   eService"
                 </li>
               </ul>
-
-             
             </div>
           </div>
         </div>
@@ -266,9 +415,19 @@
         />
       </div>
     </div>
-    <footer class="footer">
-      <div class="footer-text">© 2022 National Telecom Public Company Limited. All Rights Reserved.</div>
-      <div class="footer-browser-support">เว็บไซต์สามารถใช้งานได้ดีกับ Internet Explorer 10 ขึ้นไป หรือ Google Chrome / Firefox เวอร์ชั่นล่าสุด</div>
+    <footer>
+      <div class="container footer-block">
+        <div class="body-block-warpper">
+          <p class="wrapper-notice-text text-yellowcolor text-center">
+            © Copyright 2022 NATIONAL TELECOM PUBLIC COMPANY LIMITED. All rights
+            reserved.
+          </p>
+          <p class="wrapper-notice-text text-yellowcolor text-center space-top">
+            เว็บไซต์สามารถใช้งานได้ดีกับ Internet Explorer 10 ขึ้นไป หรือ Google
+            Chrome / Firefox เวอร์ชั่นล่าสุด
+          </p>
+        </div>
+      </div>
     </footer>
   </body>
   <script
