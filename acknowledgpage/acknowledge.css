@@ -190,4 +190,8 @@ label {
     .mobile-hidden {
         display: none;
     }
+
+    .content-body-block {
+        padding: 3rem;
+    }
 }
