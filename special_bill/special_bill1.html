@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NT Special Bill</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./special_bill.css">
+    <link rel="stylesheet" href="./header.css">
+    <link rel="stylesheet" href="./footer.css">
+    <link rel="stylesheet" href="./../fonts/font.css">
+
+</head>
+
+<body>
+    <header class="header-desktop">
+        <div class="container">
+            <div class="sub-header-logo">
+                <div class="logo-wrapper">
+                    <div>
+                        <a href="https://www.ntplc.co.th/onlinestore/home">
+                            <img src="./assets/header-footer-images/nt-logo-desktop.svg" data-sf-ec-immutable="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.ntplc.co.th/onlinestore/home">
+                            <img src="./assets/header-footer-images/eservice-logo-desktop.svg" data-sf-ec-immutable="">
+                        </a>
+                    </div>
+                    <div>
+                        <div class="lang-wraper">
+                            <p class="wrapper-desc-text">EN</p>
+                            <img src="./assets/header-footer-images/US-Flag.svg" data-sf-ec-immutable="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <header class="header-mobile">
+        <div class="container">
+            <div class="sub-header-logo">
+                <div class="logo-wrapper">
+                    <div>
+                        <div class="lang-wraper">
+                            <p class="wrapper-desc-text">EN</p>
+                            <img src="./assets/header-footer-images/US-Flag.svg" data-sf-ec-immutable="">
+                        </div>
+                    </div>
+                    <div>
+                        <a href="https://www.ntplc.co.th/onlinestore/home">
+                            <img src="./assets/header-footer-images/eservice-logo-mobile.svg" data-sf-ec-immutable="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.ntplc.co.th/onlinestore/home">
+                            <img src="./assets/header-footer-images/nt-logo-mobile.svg" data-sf-ec-immutable="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content-main">
+        <div class="containernopad content-main-wrapper">
+            <div class="content-header-block header-block-wrapper">
+                <div class="header1-block">
+                    <div class="eservice-bill-b">
+                        <p class="bill-b-text">Quick Service</p>
+                    </div>
+                    <div class="header-block-header-text">
+                        <p class="header-header-text">NT Special Bill
+                        </p>
+                    </div>
+                    <div class="header-block-header-text">
+                        <p class="header-normal-text">ชำระใบแจ้งค่าบริการพิเศษ
+                        </p>
+                    </div>
+                    <div class="step-wrapper">
+                        <div class="nt-bullet-line"></div>
+                        <div class="step">
+                            <div class="mock-cle active">
+                                <img src="./assets/images/step1active.svg" alt="" />
+                            </div>
+                            <p class="step-text">1. กรอกข้อมูลที่ต้องชำระ</p>
+                        </div>
+                        <div class="step">
+                            <div class="mock-cle">
+                                <img src="./assets/images/step2.svg" alt="" />
+                            </div>
+                            <p class="step-text">2. ยืนยันตัวตน</p>
+                        </div>
+                        <div class="step">
+                            <div class="mock-cle">
+                                <img src="./assets/images/step3.svg" alt="" />
+                            </div>
+                            <p class="step-text">3. เลือกรายการชำระเงิน</p>
+                        </div>
+                        <div class="step">
+                            <div class="mock-cle">
+                                <img src="./assets/images/step4.svg" alt="" />
+                            </div>
+                            <p class="step-text">4. ชำระเงิน</p>
+                        </div>
+                    </div>
+                    <div class="header-block-header-image">
+                        <picture>
+                            <source srcset="./assets/images/special_bill_header_desktop.svg" media="(max-width:991px)">
+                            <img class="" src="./assets/images/special_bill_header_desktop.svg" alt="">
+                        </picture>
+                    </div>
+                    <div class="header-block-header-image-left">
+                        <picture>
+                            <source srcset="./assets/images/header-image-left-mobile.svg" media="(max-width:991px)">
+                            <img class="" src="./assets/images/header-image-left-desktop.svg" alt="">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body-block body-block-warpper">
+                <div class="text-wrapper example-wrapper">
+                    <p class="wrapper-big-header-text">กรุณากรอกรหัสลูกค้าที่ต้องการชำระ</p>
+                    <a id="example" class="wrapper-desc-text">คลิกดูตัวอย่าง</a>
+                </div>
+                <div class="input-all-wrapper">
+                    <div class="inputs-wrapper">
+                        <div class="input-wrapper">
+                            <input class="in-block" type="text" oninput="onInputNumber(this)">
+                            <button type="button" class="in-block-btn add">
+                                <img class="in-block-icon" src="./assets/images/add.svg" alt="icon">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-wrapper space-top1">
+                    <p class="wrapper-notice-text">* ชำระได้สูงสุด 3 หมายเลขบริการ / รหัสลูกค้า ต่อครั้ง</p>
+                </div>
+                <div class="checkbox-wrapper">
+                    <div class="consent-wrapper">
+                        <input type="checkbox" id="concent" name="concent" />
+                    </div>
+
+                    <label class="wrapper-desc-text" for="concent">
+                        ยอมรับ
+                    </label>
+                    <a class="wrapper-desc-text cursor" id="notice-modal">เงื่อนไขและข้อตกลงการใช้บริการ</a>
+                </div>
+                <div class="next-page-btn-wrapper">
+                    <button class="nextpage1 disabled" type="button">
+                        ตกลง
+                    </button>
+                    <p class="wrapper-notice-text space-top1">This site is protected by reCAPTCHA and the Google</p>
+                    <p class="wrapper-notice-text space-top"><a target="_blank" href="https://policies.google.com/privacy?hl=en-US">Private Policy</a> 
+                        and <a target="_blank" href="https://policies.google.com/terms?hl=en-US">Terms of Service</a> apply</p>
+                </div>
+            </div>
+            <div class="content-body-block-nobg">
+                <div class="text-wrapper">
+                    <p class="wrapper-header-text text-center">NT Special Bill สำหรับชำระใบแจ้งค่าใช้บริการพิเศษ (TOT) เท่านั้น
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container footer-block">
+            <div class="body-block-warpper">
+                <p class="wrapper-notice-text text-yellowcolor text-center">© Copyright 2022 NATIONAL TELECOM PUBLIC COMPANY LIMITED. All rights reserved.</p>
+                <p class="wrapper-notice-text text-yellowcolor text-center space-top">เว็บไซต์สามารถใช้งานได้ดีกับ Internet Explorer 10 ขึ้นไป หรือ Google Chrome / Firefox เวอร์ชั่นล่าสุด</p>
+            </div>
+        </div>
+    </footer>
+    <div class="modal fade modal-out-stock first-modal show" id="modal-consent" tabindex="-1"
+        aria-labelledby="modal-consentLabel" aria-modal="true" role="dialog" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="text-wrapper">
+                        <p class="wrapper-header-text text-center">
+                            เงื่อนไขการให้บริการชำระค่าบริการด่วนออนไลน์ (NT Quick Pay)
+                        </p>
+                    </div>
+                </div>
+                <div class=context>
+                    <p class="wrapper-desc-text space-line">
+                        โปรดอ่านและทำความเข้าใจเงื่อนไขการใช้บริการชำระค่าบริการด่วนออนไลน์ (NT QuickPay)
+                        นี้อย่างละเอียด</p>
+                    <p class="wrapper-desc-text space-line space-top1">การที่ท่านใช้บริการชำระค่าบริการด่วนออนไลน์ (NT
+                        QuickPay) ถือว่าท่านยอมรับเงื่อนไขที่กำหนดไว้ทุกประการ</p>
+                    <p class="wrapper-desc-text space-line space-top1">การให้บริการชำระค่าบริการด่วนออนไลน์ (NT
+                        QuickPay) เป็นบริการซึ่ง บริษัทโทรคมนาคมแห่งชาติ จำกัด (มหาชน) ซึ่งต่อไปนี้จะเรียกว่า “เอ็นที”
+                        พัฒนาขึ้น เพื่ออำนวยความสะดวกให้กับลูกค้า เอ็นที ซึ่งต่อไปนี้จะเรียกว่า “ผู้ใช้บริการ”
+                        ให้สามารถชำระค่าใช้บริการได้ง่ายๆ ด้วยตัวเอง</p>
+
+                    <p class="wrapper-desc-text space-line space-top1">1. ผู้ใช้บริการสามารถชำระค่าบริการผ่านระบบ NT
+                        QuickPay สามารถเลือกประเภทการชำระ ได้ 3 วิธี</p>
+                    <li class="wrapper-desc-text">
+                        ผ่านบัตรเครดิตของ Visa, MasterCard, และ JCB ทุกธนาคารที่ออกภายในประเทศไทย และต่างประเทศ
+                    </li>
+                    <li class="wrapper-desc-text">
+                        ผ่านบัตรเดบิต ที่ออกภายในประเทศไทย (เฉพาะธนาคารกรุงไทย ธนาคารกสิกรไทย ธนาคารยูโอบี ธนาคารกรุงเทพ
+                        ธนาคารไทยพาณิชย์ ธนาคารทีทีบี ธนาคารซีไอเอ็มบี ไทย และธนาคารออมสิน)
+                    </li>
+                    <li class="wrapper-desc-text">
+                        ผ่านหักบัญชีธนาคาร Internet banking (เฉพาะธนาคารกรุงไทย ธนาคารไทยพาณิชย์ ธนาคารกรุงศรี
+                        และธนาคารยูโอบี)
+                    </li>
+                    <p class="wrapper-desc-text space-line">2. ผู้ใช้บริการสามารถชำระค่าบริการผ่านระบบ NT QuickPay
+                        ทั้งโทรศัพท์บ้าน อินเทอร์เน็ต และโทรศัพท์มือถือในระบบรายเดือนเฉพาะของเอ็นที
+                        โดยระบบจะแสดงยอดชำระตามที่ระบุในใบแจ้งค่าบริการ สามารถเลือกรายการชำระได้ตามต้องการ
+                        และชำระแบบเต็มจำนวนเท่านั้น</p>
+                    <p class="wrapper-desc-text space-line">3. ผู้ใช้บริการที่เป็นลูกค้านิติบุคคล/ราชการ/รัฐวิสาหกิจ
+                        ไม่สามารถชำระเงินผ่าน NT QuickPay ได้ (ไม่สามารถทำการหักภาษี ณ ที่จ่ายได้)</p>
+                    <p class="wrapper-desc-text space-line">4.
+                        ผู้ใช้บริการที่เป็นลูกค้าหักบัญชีเงินฝากธนาคาร/บัตรเครดิตอัตโนมัติ สามารถชำระเงินผ่านช่องทาง NT
+                        QuickPay และหากเกิดการชำระซ้ำ ยอดเงินนั้นจะถูกนำไปหักกับค่าใช้บริการรอบบิลถัดไป</p>
+                    <p class="wrapper-desc-text space-line">5. ระยะเวลาในการตรวจสอบการชำระเงินอาจใช้เวลา
+                        หากผู้ใช้บริการไม่ได้รับผลการทำรายการชำระค่าบริการไม่ว่ากรณีใด ๆ ก็ตาม
+                        โปรดตรวจสอบประวัติการชำระค่าบริการก่อนการทำรายการซ้ำอีกครั้ง</p>
+                    <p class="wrapper-desc-text space-line">6. ผู้ใช้บริการรับทราบและยอมรับว่าในการใช้บริการ NT QuickPay
+                        หักชำระค่าบริการจากบัญชีบัตรเครดิต/เดบิตนั้น
+                        เอ็นทีเป็นเพียงช่องทางเชื่อมต่อไปยังระบบให้บริการหรือเว็บไซต์ของธนาคารและ/หรือผู้ออกบัตรเครดิต/เดบิต
+                        และ/หรือผู้ให้บริการรับชำระเงินเท่านั้น การกระทำใด ๆ
+                        เพื่อมีผลให้ต้องมีการหักเงินหรือเรียกเก็บเงินจากบัตรเครดิต/เดบิตใด ๆ
+                        เป็นข้อตกลงระหว่างเจ้าของบัตรเครดิต/เดบิตกับธนาคารและ/หรือผู้ออกบัตรเครดิต/เดบิต และ/หรือ
+                        ผู้ให้บริการรับชำระเงินนั้น ๆ เอง ผู้ใช้บริการต้องปฏิบัติตามข้อตกลงและเงื่อนไขของเว็บไซต์นั้น ๆ
+                        โดยเคร่งครัด เอ็นที จะไม่รับผิดชอบต่อความเสียหายหรือความผิดพลาดใด ๆ
+                        ในกรณีที่ผู้ใช้บริการนำข้อมูลส่วนตัวไปใช้ในเว็บไซต์อื่น</p>
+                    <p class="wrapper-desc-text space-line">การใช้บริการชำระเงินผ่านระบบ NT QuickPay
+                        ผู้ใช้บริการต้องกรอกข้อมูลบัตรเครดิต/เดบิตให้ครบถ้วนเอง และข้อมูลจะถูกส่งไปให้</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal-big fade modal-out-stock first-modal show" id="modal-example" tabindex="-1"
+        aria-labelledby="modal-exampleLabel" aria-modal="true" role="dialog" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="text-wrapper">
+                        <p class="wrapper-header-text text-center">
+                            ตัวอย่างรหัสลูกค้า
+                        </p>
+                    </div>
+                </div>
+                <div class=context>
+                    <div class="example-image-wrapper">
+                        <img src="./assets/images/example_desktop.png" alt="example"/>
+                    </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script src="./../js/vendor/jquery.min.js"></script>
+<script src="./special_bill1.js"></script>
+
+</html>

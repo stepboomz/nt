@@ -1,0 +1,107 @@
+:root {
+    --bg-color: #F2F2F2;
+    --header-size: 3rem;
+    --title-morebig-size: 1.85rem;
+    --title-big-size: 1.6rem;
+    --title-big-size-for-tel: 1.6rem;
+    --title-small-size: 1.4rem;
+    --desc-size: 1.1rem;
+    --error-size: 1rem;
+    --notice-size: 0.9rem;
+
+    --color-white: #FFFFFF;
+    --color-red-error: #ED6161;
+    --color-text-red: #FF505E;
+    --color-yellow-ci: #FCCC03;
+    --color-light-yellow-ci: #ffdd6a;
+    --color-black: #000000;
+    --link-color: #3875EA;
+}
+
+.header-desktop {
+    height: 97px;
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 10px;
+}
+
+.header-mobile {
+    display: none;
+}
+
+.header-desktop .sub-header-logo {
+    width: 100%;
+}
+
+.header-desktop .logo-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-desktop .logo-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-desktop .logo-wrapper > div {
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+}
+
+.header-desktop .logo-wrapper > div:first-child {
+    justify-content: flex-start;
+}
+
+.header-desktop .logo-wrapper > div:last-child {
+    justify-content: flex-end;
+}
+
+.header-desktop .sub-header-logo img {
+    max-height: 69px;
+}
+
+.header-desktop .lang-wraper {
+    display: flex;
+    align-items: center;
+}
+
+.header-desktop .lang-wraper img {
+    margin-left: 0.5rem;
+}
+
+@media only screen and (max-width:991px) {
+    .header-desktop {
+        display: none;
+    }
+
+    .header-mobile {
+        display: block;
+        background-color: var(--bg-color);
+        height: 70px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .header-mobile .logo-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-mobile .logo-wrapper > div {
+        width: 33.33%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .header-mobile .logo-wrapper > div:first-child {
+        justify-content: flex-start;
+    }
+
+    .header-mobile .logo-wrapper > div:last-child {
+        justify-content: flex-end;
+    }
+}

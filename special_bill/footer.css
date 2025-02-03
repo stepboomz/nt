@@ -1,0 +1,59 @@
+:root {
+    --color-yellow-ci: #FCCC03;
+    --footer-bg-color: #54595e;
+    --header-size: 3rem;
+    --title-morebig-size: 1.85rem;
+    --title-big-size: 1.6rem;
+    --title-big-size-for-tel: 1.6rem;
+    --title-small-size: 1.4rem;
+    --desc-size: 1.1rem;
+    --error-size: 1rem;
+    --notice-size: 0.9rem;
+
+    --color-white: #FFFFFF;
+    --color-red-error: #ED6161;
+    --color-text-red: #FF505E;
+    --color-light-yellow-ci: #ffdd6a;
+    --color-black: #000000;
+    --link-color: #3875EA;
+}
+
+footer {
+    height: 74px;
+    background-color: var(--footer-bg-color);
+}
+
+footer .body-block-warpper {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+footer .footer-block {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-yellowcolor {
+    color: var(--color-yellow-ci);
+}
+
+@media only screen and (max-width:991px) {
+    footer .body-block-warpper {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    footer .wrapper-notice-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width:460px) {
+    footer .wrapper-notice-text {
+        font-size: 0.75rem;
+    }
+}

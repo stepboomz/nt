@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Pay</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./quick_pay.css">
+    <link rel="stylesheet" href="./header.css">
+    <link rel="stylesheet" href="./footer.css">
+    <link rel="stylesheet" href="./../fonts/font.css">
+
+</head>
+
+<body>
+    <header class="header-desktop">
+        <div class="container">
+            <div class="sub-header-logo">
+                <div class="logo-wrapper">
+                    <div>
+                        <a href="https://www.ntplc.co.th/onlinestore/home">
+                            <img src="./assets/header-footer-images/nt-logo-desktop.svg" data-sf-ec-immutable="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.ntplc.co.th/onlinestore/home">
+                            <img src="./assets/header-footer-images/eservice-logo-desktop.svg" data-sf-ec-immutable="">
+                        </a>
+                    </div>
+                    <div>
+                        <div class="lang-wraper">
+                            <p class="wrapper-desc-text">EN</p>
+                            <img src="./assets/header-footer-images/US-Flag.svg" data-sf-ec-immutable="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <header class="header-mobile">
+        <div class="container">
+            <div class="sub-header-logo">
+                <div class="logo-wrapper">
+                    <div>
+                        <div class="lang-wraper">
+                            <p class="wrapper-desc-text">EN</p>
+                            <img src="./assets/header-footer-images/US-Flag.svg" data-sf-ec-immutable="">
+                        </div>
+                    </div>
+                    <div>
+                        <a href="https://www.ntplc.co.th/onlinestore/home">
+                            <img src="./assets/header-footer-images/eservice-logo-mobile.svg" data-sf-ec-immutable="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.ntplc.co.th/onlinestore/home">
+                            <img src="./assets/header-footer-images/nt-logo-mobile.svg" data-sf-ec-immutable="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content-main">
+        <div class="containernopad content-main-wrapper">
+            <div class="content-header-block header-block-wrapper">
+                <div class="header1-block">
+                    <div class="eservice-bill-b">
+                        <p class="bill-b-text">Quick Service</p>
+                    </div>
+                    <div class="header-block-header-text">
+                        <p class="header-header-text">NT Quick Pay
+                        </p>
+                    </div>
+                    <div class="header-block-header-text">
+                        <p class="header-normal-text">จ่ายบิลง่ายๆ สะดวกรวดเร็วเพียงไม่กี่ขั้นตอน
+                        </p>
+                    </div>
+                    <div class="step-wrapper">
+                        <div class="nt-bullet-line"></div>
+                        <div class="step">
+                            <div class="mock-cle active">
+                                <img src="./assets/images/step1active.svg" alt="" />
+                            </div>
+                            <p class="step-text">1. กรอกข้อมูลที่ต้องชำระ</p>
+                        </div>
+                        <div class="step">
+                            <div class="mock-cle active">
+                                <img src="./assets/images/step2active.svg" alt="" />
+                            </div>
+                            <p class="step-text">2. ยืนยันตัวตน</p>
+                        </div>
+                        <div class="step">
+                            <div class="mock-cle active">
+                                <img src="./assets/images/step3active.svg" alt="" />
+                            </div>
+                            <p class="step-text">3. เลือกรายการชำระเงิน</p>
+                        </div>
+                        <div class="step">
+                            <div class="mock-cle active">
+                                <img src="./assets/images/step4active.svg" alt="" />
+                            </div>
+                            <p class="step-text">4. ชำระเงิน</p>
+                        </div>
+                    </div>
+                    <div class="header-block-header-image">
+                        <picture>
+                            <source srcset="./assets/images/page1-header-right-mobile.svg" media="(max-width:991px)">
+                            <img class="" src="./assets/images/page1-header-right-desktop.svg" alt="">
+                        </picture>
+                    </div>
+                    <div class="header-block-header-image-left">
+                        <picture>
+                            <source srcset="./assets/images/header-image-left-mobile.svg" media="(max-width:991px)">
+                            <img class="" src="./assets/images/header-image-left-desktop.svg" alt="">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body-block body-block-warpper2">
+                <div class="text-wrapper">
+                    <p class="wrapper-big-header-text">เลือกรายการชำระ</p>
+                </div>
+
+                <div class="lists-order-wrapper space-top1" id="lists-order-wrapper">
+                    <div class="lists-order space-top1">
+                        <div type="button" class="list-order-header-wrapper collapsed" data-bs-toggle="collapse"
+                            data-bs-target="#collapseList1" aria-expanded="false" aria-controls="collapseList1">
+                            <div class="text-wrapper">
+                                <p class="wrapper-big-header-text">บ.qwert จำกัด</p>
+                            </div>
+                            <div class="text-wrapper flex-div-column">
+                                <p class="header-normal-text">หมายเลขบริการ</p>
+                                <p class="wrapper-big-header-text tel">089-999-9999</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse" id="collapseList1">
+                        <div class="list-order-body-wrapper">
+                            <div class="list-header-wrapper">
+                                <div class="list-header first">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">#</p>
+                                    </div>
+                                </div>
+                                <div class="list-header first">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">ลำดับ</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">รอบบิล</p>
+                                    </div>
+                                </div>
+                                <div class="list-header long">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">เลขที่ใบแจ้งค่าบริการ</p>
+                                    </div>
+                                </div>
+                                <div class="list-header medium">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">ประเภทบริการ</p>
+                                    </div>
+                                </div>
+                                <div class="list-header long">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">รหัสลูกค้า</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">กำหนดชำระ</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">จำนวนเงิน (บาท)</p>
+                                    </div>
+                                </div>
+                                <div class="list-header last">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">ภาษีหัก ณ ที่จ่าย</p>
+                                    </div>
+                                    <div class="row-wrapper">
+                                        <div class="text-wrapper">
+                                            <div class="noblank">
+                                                <p class="wrapper-desc-text bold text-center">1%</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <div class="noblank">
+                                                <p class="wrapper-desc-text bold text-center">5%</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <div class="noblank">
+                                                <p class="wrapper-desc-text bold text-center">7%</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-body-wrapper">
+                                <div class="list-header first">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">#</p>
+                                    </div>
+                                </div>
+                                <div class="list-header first">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">1</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">11/10/67</p>
+                                    </div>
+                                </div>
+                                <div class="list-header long">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">061564521231</p>
+                                    </div>
+                                </div>
+                                <div class="list-header medium">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">MOBILE</p>
+                                    </div>
+                                </div>
+                                <div class="list-header long">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">123456521789</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">11/10/67</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">317.28</p>
+                                    </div>
+                                </div>
+                                <div class="list-header last">
+                                    <div class="text-wrapper">
+                                    </div>
+                                    <div class="row-wrapper">
+                                        <div class="text-wrapper">
+                                            <div class="blank">
+                                                <p class="wrapper-desc-text text-center">0</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <div class="blank">
+                                                <p class="wrapper-desc-text text-center">0</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <div class="blank">
+                                                <p class="wrapper-desc-text text-center">0</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lists-order space-top1">
+                        <div type="button" class="list-order-header-wrapper collapsed" data-bs-toggle="collapse"
+                            data-bs-target="#collapseList2" aria-expanded="false" aria-controls="collapseList2">
+                            <div class="text-wrapper">
+                                <p class="wrapper-big-header-text">บ.qwert จำกัด</p>
+                            </div>
+                            <div class="text-wrapper flex-div-column">
+                                <p class="header-normal-text">หมายเลขบริการ</p>
+                                <p class="wrapper-big-header-text tel">089-999-8888</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse" id="collapseList2">
+                        <div class="list-order-body-wrapper">
+                            <div class="list-header-wrapper">
+                                <div class="list-header first">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">#</p>
+                                    </div>
+                                </div>
+                                <div class="list-header first">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">ลำดับ</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">รอบบิล</p>
+                                    </div>
+                                </div>
+                                <div class="list-header long">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">เลขที่ใบแจ้งค่าบริการ</p>
+                                    </div>
+                                </div>
+                                <div class="list-header medium">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">ประเภทบริการ</p>
+                                    </div>
+                                </div>
+                                <div class="list-header long">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">รหัสลูกค้า</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">กำหนดชำระ</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">จำนวนเงิน (บาท)</p>
+                                    </div>
+                                </div>
+                                <div class="list-header last">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">ภาษีหัก ณ ที่จ่าย</p>
+                                    </div>
+                                    <div class="row-wrapper">
+                                        <div class="text-wrapper">
+                                            <p class="wrapper-desc-text bold text-center">1%</p>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <p class="wrapper-desc-text bold text-center">5%</p>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <p class="wrapper-desc-text bold text-center">7%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-body-wrapper">
+                                <div class="list-header first">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">#</p>
+                                    </div>
+                                </div>
+                                <div class="list-header first">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">1</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">11/10/67</p>
+                                    </div>
+                                </div>
+                                <div class="list-header long">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">061564521231</p>
+                                    </div>
+                                </div>
+                                <div class="list-header medium">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">MOBILE</p>
+                                    </div>
+                                </div>
+                                <div class="list-header long">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">123456521789</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">11/10/67</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">317.28</p>
+                                    </div>
+                                </div>
+                                <div class="list-header last">
+                                    <div class="text-wrapper">
+                                    </div>
+                                    <div class="row-wrapper">
+                                        <div class="text-wrapper">
+                                            <p class="wrapper-desc-text text-center">1%</p>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <p class="wrapper-desc-text text-center">5%</p>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <p class="wrapper-desc-text text-center">7%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lists-order space-top1">
+                        <div type="button" class="list-order-header-wrapper collapsed" data-bs-toggle="collapse"
+                            data-bs-target="#collapseList3" aria-expanded="false" aria-controls="collapseList3">
+                            <div class="text-wrapper">
+                                <p class="wrapper-big-header-text">บ.qwert จำกัด</p>
+                            </div>
+                            <div class="text-wrapper flex-div-column">
+                                <p class="header-normal-text">หมายเลขบริการ</p>
+                                <p class="wrapper-big-header-text tel">089-999-9978</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse" id="collapseList3">
+                        <div class="list-order-body-wrapper">
+                            <div class="list-header-wrapper">
+                                <div class="list-header first">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">#</p>
+                                    </div>
+                                </div>
+                                <div class="list-header first">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">ลำดับ</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">รอบบิล</p>
+                                    </div>
+                                </div>
+                                <div class="list-header long">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">เลขที่ใบแจ้งค่าบริการ</p>
+                                    </div>
+                                </div>
+                                <div class="list-header medium">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">ประเภทบริการ</p>
+                                    </div>
+                                </div>
+                                <div class="list-header long">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">รหัสลูกค้า</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">กำหนดชำระ</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">จำนวนเงิน (บาท)</p>
+                                    </div>
+                                </div>
+                                <div class="list-header last">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text bold text-center">ภาษีหัก ณ ที่จ่าย</p>
+                                    </div>
+                                    <div class="row-wrapper">
+                                        <div class="text-wrapper">
+                                            <p class="wrapper-desc-text bold text-center">1%</p>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <p class="wrapper-desc-text bold text-center">5%</p>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <p class="wrapper-desc-text bold text-center">7%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-body-wrapper">
+                                <div class="list-header first">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">#</p>
+                                    </div>
+                                </div>
+                                <div class="list-header first">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">1</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">11/10/67</p>
+                                    </div>
+                                </div>
+                                <div class="list-header long">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">061564521231</p>
+                                    </div>
+                                </div>
+                                <div class="list-header medium">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">MOBILE</p>
+                                    </div>
+                                </div>
+                                <div class="list-header long">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">123456521789</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">11/10/67</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">317.28</p>
+                                    </div>
+                                </div>
+                                <div class="list-header last">
+                                    <div class="text-wrapper">
+                                    </div>
+                                    <div class="row-wrapper">
+                                        <div class="text-wrapper">
+                                            <p class="wrapper-desc-text text-center">1%</p>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <p class="wrapper-desc-text text-center">5%</p>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <p class="wrapper-desc-text text-center">7%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-body-wrapper">
+                                <div class="list-header first">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">#</p>
+                                    </div>
+                                </div>
+                                <div class="list-header first">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">1</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">11/10/67</p>
+                                    </div>
+                                </div>
+                                <div class="list-header long">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">061564521231</p>
+                                    </div>
+                                </div>
+                                <div class="list-header medium">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">MOBILE</p>
+                                    </div>
+                                </div>
+                                <div class="list-header long">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">123456521789</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">11/10/67</p>
+                                    </div>
+                                </div>
+                                <div class="list-header">
+                                    <div class="text-wrapper">
+                                        <p class="wrapper-desc-text text-center">317.28</p>
+                                    </div>
+                                </div>
+                                <div class="list-header last">
+                                    <div class="text-wrapper">
+                                    </div>
+                                    <div class="row-wrapper">
+                                        <div class="text-wrapper">
+                                            <p class="wrapper-desc-text text-center">1%</p>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <p class="wrapper-desc-text text-center">5%</p>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <p class="wrapper-desc-text text-center">7%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sum-cost-wrapper">
+                    <div class="sum-cost-block">
+                        <p class="wrapper-big-header-text fw500">ยอดชำระรวม <span id="sum-cost"
+                                class="wrapper-big-header-text bold">0</span></p>
+                    </div>
+                </div>
+                <div class="order-chosen-btn-wrapper">
+                    <button class="nextpage3-cancel" type="button">ย้อนกลับ</button>
+                    <button class="nextpage3-submit disabled" disabled type="button">ยืนยันการชำระเงิน</button>
+                </div>
+            </div>
+            <div class="content-body-block-nobg">
+                <!-- warning content -->
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container footer-block">
+            <div class="body-block-warpper">
+                <p class="wrapper-notice-text text-yellowcolor text-center">© Copyright 2022 NATIONAL TELECOM PUBLIC COMPANY LIMITED. All rights reserved.</p>
+                <p class="wrapper-notice-text text-yellowcolor text-center space-top">เว็บไซต์สามารถใช้งานได้ดีกับ Internet Explorer 10 ขึ้นไป หรือ Google Chrome / Firefox เวอร์ชั่นล่าสุด</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script src="./../js/vendor/jquery.min.js"></script>
+<script src="./quick_pay3_template1_step2.js"></script>
+
+</html>
