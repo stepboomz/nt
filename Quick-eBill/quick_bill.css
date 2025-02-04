@@ -57,7 +57,7 @@ p {
   background-color: lightgray;
   min-height: calc(100vh - 171px);
   width: 100%;
-  padding: 4rem 0;
+  padding: 1rem 0;
   background-size: cover;
   background-image: url('./assets/images/BG.png');
 }
@@ -207,7 +207,7 @@ p {
     padding-right: 0;
   }
   .body-block-warpper {
-    padding: 3rem 8rem;
+    padding: 3rem 15rem;
   }
 
   .body-block-warpper1 {
@@ -236,6 +236,7 @@ p {
     top: -1rem;
     right: 0;
   }
+  
   .content-main {
     min-height: calc(100vh - 144px);
   }
@@ -258,6 +259,17 @@ p {
     top: -1rem;
     right: -1rem;
   }
+.form-label{
+  font-size: 21px !important;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  /* word-wrap: break-word !important; */
+}
+
+
+
+
 
   .header-block-wrapper .header1-block {
     padding-top: 1rem;
@@ -313,7 +325,7 @@ p {
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .form-group input {
@@ -376,7 +388,7 @@ p {
 }
 
 .collapsible-header {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;

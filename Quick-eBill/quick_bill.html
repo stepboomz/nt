@@ -14,130 +14,117 @@
     <link rel="stylesheet" href="./../fonts/font.css" />
     <link rel="stylesheet" href="./header.css" />
     <link rel="stylesheet" href="./footer.css" />
-    <script>
-      function toggleCollapsible(element) {
-        const content = element.nextElementSibling;
-        const icon = element.querySelector(".toggle-icon");
-        content.classList.toggle("collapsed");
-        icon.classList.toggle("collapsed");
-      }
+   <script>
+    function toggleCollapsible(element) {
+  const content = element.nextElementSibling;
+  const icon = element.querySelector(".toggle-icon");
+  content.classList.toggle("collapsed");
+  icon.classList.toggle("collapsed");
+}
 
-      document.addEventListener("DOMContentLoaded", function () {
-        const content = document.querySelector(".collapsible-content");
-        const icon = document.querySelector(".toggle-icon");
-        if (content) content.classList.remove("collapsed");
-        if (icon) icon.classList.remove("collapsed");
-      });
+document.addEventListener("DOMContentLoaded", function () {
+  const content = document.querySelector(".collapsible-content");
+  const icon = document.querySelector(".toggle-icon");
+  if (content) content.classList.remove("collapsed");
+  if (icon) icon.classList.remove("collapsed");
+});
 
-      ///check service
-      function validateServiceNumber(input) {
-        input.value = input.value.replace(/[^0-9]/g, "");
+// Service number validation
+function validateServiceNumber(input) {
+  input.value = input.value.replace(/[^0-9]/g, "");
+  checkFormValidity();
+}
 
-        const value = input.value.trim();
-        const errorElement = document.getElementById("serviceNumberError");
+// ID number validation
+function validateIdNumber(input) {
+  input.value = input.value.replace(/[^A-Za-z0-9]/g, "");
+  checkFormValidity();
+}
 
-        if (!value) {
-          input.classList.add("error");
-          errorElement.style.display = "block";
-        } else {
-          input.classList.remove("error");
-          errorElement.style.display = "none";
-        }
+// Check if form is valid to enable/disable submit button
+// function checkFormValidity() {
+//   const serviceNumber = document.getElementById("serviceNumber").value.trim();
+//   const idNumber = document.getElementById("idNumber").value.trim();
+//   const submitBtn = document.getElementById("submitBtn");
 
-        checkFormValidity();
-      }
+//   const isValid = serviceNumber && idNumber && idNumber.length >= 7 && idNumber.length <= 13;
+//   submitBtn.disabled = !isValid;
+// }
 
-      ///check idnumber passport
-      function validateIdNumber(input) {
-        input.value = input.value.replace(/[^A-Za-z0-9]/g, "");
+// Form validation on submit
+function validateForm(event) {
+  event.preventDefault();
 
-        const value = input.value.trim();
-        const errorElement = document.getElementById("idNumberError");
+  const serviceNumber = document.getElementById("serviceNumber");
+  const idNumber = document.getElementById("idNumber");
+  const serviceNumberError = document.getElementById("serviceNumberError");
+  const idNumberError = document.getElementById("idNumberError");
+  
+  let isValid = true;
 
-        const isValid = value.length >= 7 && value.length <= 13;
+  // Validate service number
+  if (!serviceNumber.value.trim()) {
+    serviceNumber.classList.add("error");
+    serviceNumberError.style.display = "block";
+    isValid = false;
+  } else {
+    serviceNumber.classList.remove("error");
+    serviceNumberError.style.display = "none";
+  }
 
-        if (!isValid) {
-          input.classList.add("error");
-          errorElement.style.display = "block";
-        } else {
-          input.classList.remove("error");
-          errorElement.style.display = "none";
-        }
+  // Validate ID number
+  const idValue = idNumber.value.trim();
+  const isIdValid = idValue.length >= 7 && idValue.length <= 13;
+  
+  if (!idValue || !isIdValid) {
+    idNumber.classList.add("error");
+    idNumberError.style.display = "block";
+    isValid = false;
+  } else {
+    idNumber.classList.remove("error");
+    idNumberError.style.display = "none";
+  }
 
-        checkFormValidity();
-      }
+  if (isValid) {
+    window.location.href = "quick_bill_step2.html";
+  }
 
-      //check form  if disable button
-      function checkFormValidity() {
-        const serviceNumber = document
-          .getElementById("serviceNumber")
-          .value.trim();
-        const idNumber = document.getElementById("idNumber").value.trim();
-        const submitBtn = document.getElementById("submitBtn");
+  return isValid;
+}
 
-        const isValid =
-          serviceNumber &&
-          idNumber &&
-          idNumber.length >= 7 &&
-          idNumber.length <= 13;
+// Example modal functions
+function showExample() {
+  document.getElementById("exampleModal").style.display = "block";
+}
 
-        submitBtn.disabled = !isValid;
-      }
+function closeExample() {
+  document.getElementById("exampleModal").style.display = "none";
+}
 
-      // validateform button go to page 2
-      function validateForm(event) {
-        event.preventDefault();
+// Close modal when clicking outside
+window.onclick = function (event) {
+  const modal = document.getElementById("exampleModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
 
-        const serviceNumber = document
-          .getElementById("serviceNumber")
-          .value.trim();
-        const idNumber = document.getElementById("idNumber").value.trim();
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("ebillForm");
+  const inputs = form.querySelectorAll("input");
 
-        if (!serviceNumber) {
-          validateServiceNumber(document.getElementById("serviceNumber"));
-          return false;
-        }
+  inputs.forEach((input) => {
+    if (input.id === "serviceNumber") {
+      input.addEventListener("input", () => validateServiceNumber(input));
+    } else if (input.id === "idNumber") {
+      input.addEventListener("input", () => validateIdNumber(input));
+    }
+  });
+});
+   </script>
+  
 
-        if (!idNumber || idNumber.length < 7 || idNumber.length > 13) {
-          validateIdNumber(document.getElementById("idNumber"));
-          return false;
-        }
-
-        // alert("Quick-eBill step2");
-        window.location.href = "quick_bill_step2.html";
-        return true;
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const form = document.getElementById("ebillForm");
-        const inputs = form.querySelectorAll("input");
-
-        inputs.forEach((input) => {
-          if (input.id === "serviceNumber") {
-            validateServiceNumber(input);
-          } else if (input.id === "idNumber") {
-            validateIdNumber(input);
-          }
-        });
-      });
-
-      function showExample() {
-        document.getElementById("exampleModal").style.display = "block";
-      }
-
-      function closeExample() {
-        document.getElementById("exampleModal").style.display = "none";
-      }
-
-      // Close modal when clicking outside
-      window.onclick = function (event) {
-        const modal = document.getElementById("exampleModal");
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      };
-    </script>
-  </head>
+</head>
   <body>
     <header class="header-desktop">
       <div class="container">
@@ -332,9 +319,9 @@
         </div>
         <div class="collapsible">
           <div class="collapsible-header" onclick="toggleCollapsible(this)">
-            <h3 style="font-size: 24px; font-weight: bold">
-              *เงื่อนไขบริการใบแจ้งค่าใช้บริการทางอีเมล (e-Bill)
-            </h3>
+            <label  class="form-label">
+              *เงื่อนไขบริการใบแจ้งค่าใช้บริการ<span style="white-space: nowrap;">ทางอีเมล (e-Bill)</span>
+            </label>
             <div class="toggle-icon"></div>
           </div>
           <div class="collapsible-content">
@@ -347,14 +334,14 @@
                 (บุคคลทั่วไป/นิติบุคคล)
               </p>
 
-              <h4
-                style="margin: 20px 0 10px; font-size: 24px; font-weight: bold"
+              <label
+                class="form-label"
               >
                 ช่องทางการสมัคร e-Bill
-              </h4>
+              </label>
               <p class="content-terms">1. สมัครออนไลน์ได้ที่</p>
               <div style="margin-left: 10px;">
-                <div style="display: flex; align-items: center; gap: 5px;">
+                <div style="display: contents; align-items: center; gap: 5px;">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
                     <defs>
                       <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 512 512">
