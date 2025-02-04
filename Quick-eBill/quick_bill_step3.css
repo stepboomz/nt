@@ -309,6 +309,8 @@ color: #34d399;
 .success-title {
 font-size: 1.5rem;
 margin-bottom: 0.5rem;
+font-weight: bold;
+margin-top: 60px;
 color: #333;
 }
 
@@ -327,7 +329,7 @@ max-width: 394px;
 border-radius: 25px;
 border: none;
 cursor: pointer;
-font-size: 1rem;
+font-size: 1.5rem;
 margin-top: 2rem;
 display: inline-block;
 text-decoration: none;

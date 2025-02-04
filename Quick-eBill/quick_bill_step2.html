@@ -238,6 +238,41 @@
         </div>
       </div>
     </footer>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const termsCheckbox = document.querySelectorAll('.checkbox-main .custom-checkbox')[1]; // Get the second checkbox (terms)
+  const submitButton = document.querySelector('.btn-submit');
+  
+  submitButton.disabled = !termsCheckbox.checked;
+  
+  if(submitButton.disabled) {
+    submitButton.style.backgroundColor = '#cccccc';
+    submitButton.style.cursor = 'not-allowed';
+  }
+  
+  termsCheckbox.addEventListener('change', function() {
+    submitButton.disabled = !this.checked;
+    
+    if(this.checked) {
+      submitButton.style.backgroundColor = ''; 
+      submitButton.style.cursor = 'pointer';
+    } else {
+      submitButton.style.backgroundColor = '#cccccc';
+      submitButton.style.cursor = 'not-allowed';
+    }
+  });
+  
+
+  submitButton.addEventListener('click', function(e) {
+    if(!termsCheckbox.checked) {
+      e.preventDefault();
+      alert('กรุณายอมรับข้อตกลงและเงื่อนไขก่อนดำเนินการต่อ');
+      return false;
+    }
+    window.location.href = 'quick_bill_step3.html';
+  });
+});
+    </script>
   </body>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
