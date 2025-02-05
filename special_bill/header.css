@@ -181,7 +181,7 @@
         z-index: 0;
         opacity: 0;
         top: 0;
-        left: 22px;
+        left: 46px;
         display: flex;
         justify-content: flex-end;
         align-items: flex-start;
@@ -194,7 +194,7 @@
         z-index: 99;
         opacity: 1;
         top: 60px;
-        left: 22px;
+        left: 46px;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -215,14 +215,43 @@
     .header-mobile .container {
         max-width: unset;
     }
+
+    .hamburger-btn {
+        border: none;
+        margin-right: 0.5rem;
+    }
+
+    .span-menu {
+        min-height: calc(50vh);
+        position: fixed;
+        background-color: #fff;
+        border-radius: 0 0 5px 5px;
+        z-index: 2;
+        width: 100%;
+        top: 70px;
+        left: -100%;
+        transition: 0.3s all linear;
+    }
+
+    .span-menu.active {
+        min-height: calc(50vh);
+        position: fixed;
+        background-color: #fff;
+        border-radius: 0 0 5px 5px;
+        width: 100%;
+        top: 70px;
+        left: 0;
+        z-index: 2;
+        transition: 0.3s all linear;
+    }
 }
 
 @media only screen and (max-width:576px) {
     .header-mobile .logo-wrapper  .lang-wrap-chosen {
-        left: 22px;
+        left: 46px;
     }
     
     .header-mobile .logo-wrapper  .lang-wrap-chosen.active {
-        left: 22px;
+        left: 46px;
     }
 }

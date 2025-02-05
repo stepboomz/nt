@@ -384,7 +384,7 @@ label {
 
 .nextpage1 {
     width: 250px;
-    height: 45px;
+    height: 50px;
     background-color: var(--color-yellow-ci);
     border-radius: 25px;
     font-size: var(--desc-size);
@@ -394,7 +394,7 @@ label {
 .nextpage2-cancel,
 .nextpage3-cancel {
     width: 45%;
-    height: 43px;
+    height: 50px;
     border: 1px solid #000000;
     background-color: var(--color-white);
     border-radius: 25px;
@@ -404,7 +404,7 @@ label {
 .nextpage2-submit,
 .nextpage3-submit {
     width: 45%;
-    height: 43px;
+    height: 50px;
     border: 1px solid var(--color-yellow-ci);
     background-color: var(--color-yellow-ci);
     color: var(--color-black);
@@ -515,10 +515,13 @@ label {
 .dropdown-chosen label {
     border: 1px solid black;
     width: 100%;
-    height: 45px;
+    height: 50px;
     border-radius: 25px;
     text-align: center;
     padding: 7.5px 20px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .slide {
@@ -618,7 +621,7 @@ label {
 }
 
 #modal-consent .modal-dialog .modal-header .close-btn-wrapper button {
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     border: none;
 }
 
@@ -1248,7 +1251,7 @@ label {
         /* font-size: 1.5rem; */
         font-weight: bold;
     }
-    
+
     .detail-wrapper .detail .wrapper-big-header-text {
         font-size: 1.5rem;
     }
