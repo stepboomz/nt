@@ -180,24 +180,26 @@
           </h2>
           <p class="bold desc-text2">กรุณากรอกข้อมูลให้ครบถ้วน</p>
           <fieldset>
-            <div class="column">
-              <div class="input-wrapper">
-                <p class="bold desc-text">ชื่อ</p>
-                <input class="desc-text" type="text" placeholder="กรุณากรอกชื่อ">
+            <form id="form">
+              <div class="column">
+                <div class="input-wrapper">
+                  <p class="bold desc-text">ชื่อ</p>
+                  <input class="desc-text" type="text" id="name" placeholder="กรุณากรอกชื่อ" oninput="validateInputFL(this)">
+                </div>
+                <div class="input-wrapper">
+                  <p class="bold desc-text mrl-5">นามสกุล</p>
+                  <input class="desc-text mrl-5" id="surname" type="text" placeholder="กรุณากรอกนามสกุล" oninput="validateInputFL(this)"> 
+                </div>
               </div>
-              <div class="input-wrapper">
-                <p class="bold desc-text mrl-5">นามสกุล</p>
-                <input class="desc-text mrl-5" type="text" placeholder="กรุณากรอกนามสกุล">
+              <div class="column">
+                <div class="input-wrapper">
+                  <p class="bold desc-text">หมายเลขโทรศัพท์</p>
+                  <input class="desc-text" id="tel-number" type="text" placeholder="กรุณากรอกหมายเลขโทรศัพท์" oninput="validatePhoneNumber(this)">
+                </div>
+                <div class="input-wrapper last">
+                </div>
               </div>
-            </div>
-            <div class="column">
-              <div class="input-wrapper">
-                <p class="bold desc-text">หมายเลขโทรศัพท์</p>
-                <input class="desc-text" type="text" placeholder="กรุณากรอกหมายเลขโทรศัพท์">
-              </div>
-              <div class="input-wrapper last">
-              </div>
-            </div>
+            </form>
           </fieldset>
 
           <div class="upload-section-wrapper">
@@ -338,7 +340,7 @@
           <button class="btn btn-cancel" onclick="window.location.href='quick_bill.html'">
             ยกเลิก
           </button>
-          <button class="btn btn-submit" onclick="window.location.href='quick_bill_step3.html'">
+          <button class="btn btn-submit" id="submitBtn">
             ส่งข้อมูล
           </button>
         </div>

@@ -361,6 +361,14 @@ input[type="file"] {
   z-index: 5;
 }
 
+.error-message {
+  margin-top: 0.5rem;
+}
+
+.file-error {
+  margin-top: 0.5rem;
+}
+
 
 @media (min-width: 375px) {
   .containernopad {

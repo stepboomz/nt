@@ -201,7 +201,6 @@ function onInputTel(input) {
     if (input.value.length > 10) {
         input.value = input.value.substring(0, 10);
     }
-    checkTel();
 }
 
 function addError(text) {
