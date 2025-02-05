@@ -310,7 +310,7 @@ label {
 }
 
 .in-block {
-    width: 85%;
+    width: calc(100% - 50px);
     padding: 7.5px 15px;
     border: 1px solid #000000;
     border-radius: 25px;
@@ -340,7 +340,7 @@ label {
 .in-block-btn {
     width: 40px;
     height: 40px;
-    margin-left: 5%;
+    margin-left: 10px;
     margin-top: 10px;
     background-color: var(--color-white);
     border: none;
@@ -538,7 +538,7 @@ label {
 }
 
 .slide li {
-    background-color: #f1f1f1;
+    background-color: #EEEEEE;
     height: 50px;
     display: flex;
 }
@@ -608,6 +608,18 @@ label {
     justify-content: center;
     border-bottom: 1px solid #000000 !important;
     padding: 1.5rem 0;
+    position: relative;
+}
+
+#modal-consent .modal-dialog .modal-header .close-btn-wrapper {
+    position: absolute;
+    right: 1rem;
+    top: 0.75rem;
+}
+
+#modal-consent .modal-dialog .modal-header .close-btn-wrapper button {
+    background-color: rgba(0,0,0,0);
+    border: none;
 }
 
 #modal-consent .modal-dialog .context {
@@ -850,10 +862,29 @@ label {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 25px;
+    padding: 15px 60px 15px 25px;
     background-color: #FFD238;
     width: 100%;
     border: none;
+    position: relative;
+}
+
+.list-order-header-wrapper.collapsed .arrow-icon {
+    position: absolute;
+    width: auto;
+    top: 50%;
+    right: 20px;
+    transform: rotate(0deg) translateY(-50%);
+    transition: 0.2s transform linear;
+}
+
+.list-order-header-wrapper .arrow-icon {
+    position: absolute;
+    width: auto;
+    top: 50%;
+    right: 20px;
+    transform: rotate(180deg) translateY(-15%);
+    transition: 0.2s transform linear;
 }
 
 .list-order-header-wrapper.collapsed {
@@ -1078,10 +1109,13 @@ label {
     .body-block-warpper1 {
         padding: 3rem 3rem;
     }
-
 }
 
 @media (min-width: 768px) {
+    /* :root {
+        --title-big-size: 1.2rem;
+    } */
+
     .containernopad {
         width: 728px;
         padding-left: 0;
@@ -1100,6 +1134,10 @@ label {
 @media (min-width: 992px) {
     .containernopad {
         width: 970px;
+    }
+
+    .body-block-warpper {
+        padding: 3rem 12rem;
     }
 
     .body-block-warpper1 {
@@ -1147,6 +1185,23 @@ label {
 
     .dropdown-chosen {
         display: block;
+        position: relative;
+    }
+
+    .dropdown-chosen .arrow-down {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        transform: rotate(0deg);
+        transition: 0.2s transform linear;
+    }
+
+    .dropdown-chosen .arrow-down.active {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        transform: rotate(180deg);
+        transition: 0.2s transform linear;
     }
 
     .body-block-warpper2,
@@ -1183,9 +1238,42 @@ label {
     }
 }
 
+@media only screen and (max-width:768px) {
+    :root {
+        --title-big-size: 1.2rem;
+    }
+
+    .wrapper-big-header-text {
+        font-size: var(--title-big-size);
+        /* font-size: 1.5rem; */
+        font-weight: bold;
+    }
+    
+    .detail-wrapper .detail .wrapper-big-header-text {
+        font-size: 1.5rem;
+    }
+
+    .list-order-header-wrapper.collapsed,
+    .list-order-header-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .flex-div-column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 @media only screen and (max-width:460px) {
     :root {
         --title-big-size-for-tel: 1.3rem;
+    }
+
+    .content-main {
+        padding: 2rem 0;
     }
 
     .header-block-wrapper .header1-block .header-block-header-image {
@@ -1260,13 +1348,6 @@ label {
         padding: 3rem 0 3rem 1.5rem;
     }
 
-    .list-order-header-wrapper.collapsed,
-    .list-order-header-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
     .lists-order {
         border-radius: 5px 0 0 0;
     }
@@ -1293,6 +1374,7 @@ label {
         padding-right: 1.5rem;
     }
 
+    .nextpage1,
     .nextpage2-cancel,
     .nextpage3-cancel,
     .nextpage2-submit,

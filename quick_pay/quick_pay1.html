@@ -7,9 +7,9 @@
     <title>Quick Pay</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./quick_pay.css">
     <link rel="stylesheet" href="./header.css">
     <link rel="stylesheet" href="./footer.css">
+    <link rel="stylesheet" href="./quick_pay.css">
     <link rel="stylesheet" href="./../fonts/font.css">
 </head>
 
@@ -19,20 +19,28 @@
             <div class="sub-header-logo">
                 <div class="logo-wrapper">
                     <div>
-                        <a href="https://www.ntplc.co.th/onlinestore/home">
+                        <a href="https://www.ntplc.co.th/onlinestore/home" target="_blank">
                             <img src="./assets/header-footer-images/nt-logo-desktop.svg" data-sf-ec-immutable="">
                         </a>
                     </div>
                     <div>
-                        <a href="https://www.ntplc.co.th/onlinestore/home">
+                        <a href="https://www.nteservice.com/eservice" target="_blank">
                             <img src="./assets/header-footer-images/eservice-logo-desktop.svg" data-sf-ec-immutable="">
                         </a>
                     </div>
                     <div>
-                        <div class="lang-wraper">
-                            <p class="wrapper-desc-text">EN</p>
+                        <button type="button" class="language-div">
+                            <div class="lang-wraper">
+                                <p class="wrapper-desc-text">EN</p>
+                                <img src="./assets/header-footer-images/US-Flag.svg" data-sf-ec-immutable="">
+                            </div>
+                        </button>
+                    </div>
+                    <div class="lang-wrap-chosen">
+                        <button type="button">
+                            <p class="wrapper-desc-text">TH</p>
                             <img src="./assets/header-footer-images/US-Flag.svg" data-sf-ec-immutable="">
-                        </div>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -43,18 +51,30 @@
             <div class="sub-header-logo">
                 <div class="logo-wrapper">
                     <div>
-                        <div class="lang-wraper">
-                            <p class="wrapper-desc-text">EN</p>
+                        <button type="button" class="hamburger-btn">
+                            <img src="./assets/header-footer-images/hamburger.svg" alt="">
+                        </button>
+                        <button type="button" class="language-div">
+                            <div class="lang-wraper">
+                                <p class="wrapper-desc-text">EN</p>
+                                <img src="./assets/header-footer-images/US-Flag.svg" data-sf-ec-immutable="">
+                            </div>
+                        </button>
+                    </div>
+                    
+                    <div class="lang-wrap-chosen">
+                        <button type="button">
+                            <p class="wrapper-desc-text">TH</p>
                             <img src="./assets/header-footer-images/US-Flag.svg" data-sf-ec-immutable="">
-                        </div>
+                        </button>
                     </div>
                     <div>
-                        <a href="https://www.ntplc.co.th/onlinestore/home">
+                        <a href="https://www.nteservice.com/eservice" target="_blank">
                             <img src="./assets/header-footer-images/eservice-logo-mobile.svg" data-sf-ec-immutable="">
                         </a>
                     </div>
                     <div>
-                        <a href="https://www.ntplc.co.th/onlinestore/home">
+                        <a href="https://www.ntplc.co.th/onlinestore/home" target="_blank">
                             <img src="./assets/header-footer-images/nt-logo-mobile.svg" data-sf-ec-immutable="">
                         </a>
                     </div>
@@ -62,6 +82,8 @@
             </div>
         </div>
     </header>
+    <div class="span-menu"></div>
+    
     <div class="content-main">
         <div class="containernopad content-main-wrapper">
             <div class="content-header-block header-block-wrapper">
@@ -106,8 +128,8 @@
                     </div>
                     <div class="header-block-header-image">
                         <picture>
-                            <source srcset="./assets/images/page1-header-right-mobile.svg" media="(max-width:991px)">
-                            <img class="" src="./assets/images/page1-header-right-desktop.svg" alt="">
+                            <source srcset="./assets/images/page1-header-right-mobile.png" media="(max-width:991px)">
+                            <img class="" src="./assets/images/page1-header-right-desktop.png" alt="">
                         </picture>
                     </div>
                     <div class="header-block-header-image-left">
@@ -120,7 +142,7 @@
             </div>
             <div class="content-body-block body-block-warpper">
                 <div class="text-wrapper">
-                    <p class="wrapper-header-text text-center">กรุณาเลือกวิธีชำระเงิน
+                    <p class="wrapper-header-text text-center">กรุณาเลือกวิธีการชำระ
                     </p>
                 </div>
                 <div class="toggle-chosen">
@@ -130,7 +152,10 @@
                     </div>
                 </div>
                 <div class="dropdown-chosen">
-                    <label for="touch"><span>ชำระผ่านหมายเลขบริการ</span></label>
+                    <img class="arrow-down" src="./assets/images/arrow-down-icon.svg" alt="">
+                    <label for="touch">
+                        <span>ชำระผ่านหมายเลขบริการ</span>
+                    </label>
                     <input type="checkbox" id="touch">
                     <ul class="slide">
                         <li>
@@ -152,7 +177,8 @@
                 <div class="input-all-wrapper">
                     <div class="inputs-wrapper">
                         <div class="input-wrapper">
-                            <input class="in-block" type="text" oninput="onInputNumber(this)">
+                            <input class="in-block" type="text" placeholder="กรุณากรอกหมายเลขบริการ"
+                                oninput="onInputNumber(this)">
                             <button type="button" class="in-block-btn add">
                                 <img class="in-block-icon" src="./assets/images/add.svg" alt="icon">
                             </button>
@@ -232,6 +258,11 @@
                             เงื่อนไขการให้บริการชำระค่าบริการด่วนออนไลน์ (NT Quick Pay)
                         </p>
                     </div>
+                    <div class="close-btn-wrapper">
+                        <button type="button" id="consent-close">
+                            <img src="./assets/images/close-icon.svg" alt="" />
+                        </button>
+                    </div>
                 </div>
                 <div class=context>
                     <p class="wrapper-desc-text space-line">
@@ -287,8 +318,10 @@
     <footer>
         <div class="container footer-block">
             <div class="body-block-warpper">
-                <p class="wrapper-notice-text text-yellowcolor text-center">© Copyright 2022 NATIONAL TELECOM PUBLIC COMPANY LIMITED. All rights reserved.</p>
-                <p class="wrapper-notice-text text-yellowcolor text-center space-top">เว็บไซต์สามารถใช้งานได้ดีกับ Internet Explorer 10 ขึ้นไป หรือ Google Chrome / Firefox เวอร์ชั่นล่าสุด</p>
+                <p class="wrapper-notice-text text-yellowcolor text-center">© Copyright 2022 NATIONAL TELECOM PUBLIC
+                    COMPANY LIMITED. All rights reserved.</p>
+                <p class="wrapper-notice-text text-yellowcolor text-center space-top">เว็บไซต์สามารถใช้งานได้ดีกับ
+                    Internet Explorer 10 ขึ้นไป หรือ Google Chrome / Firefox เวอร์ชั่นล่าสุด</p>
             </div>
         </div>
     </footer>
@@ -296,6 +329,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+<script src="./header.js"></script>
 <script src="./../js/vendor/jquery.min.js"></script>
 <script src="./quick_pay1.js"></script>
 

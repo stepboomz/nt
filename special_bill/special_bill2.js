@@ -110,19 +110,48 @@ function formatPhoneNumber(number) {
 
 function genTelItemsBlock() {
     let itemsWrapper = document.getElementById('items-wrapper');
+    itemsWrapper.innerHTML = ''; 
+
+    // Group data by copName
+    let groupedData = {};
     data.forEach(item => {
-        let formattedNumber = formatPhoneNumber(item.telNumber);
-        let div = document.createElement('div');
-        div.classList.add('item-bill');
-        div.innerHTML = `
-            <div class="text-wrapper">
-                <p class="wrapper-desc-text">หมายเลขบริการ</p>
-            </div>
-            <div class="text-wrapper">
-                <p class="wrapper-big-tel-text">${formattedNumber}</p>
-            </div>`;
-        itemsWrapper.appendChild(div);
+        if (!groupedData[item.copName]) {
+            groupedData[item.copName] = [];
+        }
+        groupedData[item.copName].push(item.telNumber);
     });
+
+    // Generate HTML
+    for (let copName in groupedData) {
+        let companyBlock = document.createElement('div');
+        companyBlock.classList.add('company-block');
+
+        // Add company name
+        let divCompany = document.createElement('div');
+        divCompany.classList.add('text-wrapper', 'space-top');
+        divCompany.innerHTML = `
+            <p class="wrapper-desc-text">${copName}</p>`;
+        
+        companyBlock.appendChild(divCompany);
+
+        // Add phone numbers
+        groupedData[copName].forEach(telNumber => {
+            let formattedNumber = formatPhoneNumber(telNumber);
+            let div = document.createElement('div');
+            div.classList.add('item-bill');
+            div.innerHTML = `
+                <div class="text-wrapper">
+                    <p class="wrapper-desc-text">หมายเลขบริการ</p>
+                </div>
+                <div class="text-wrapper">
+                    <p class="wrapper-big-tel-text">${formattedNumber}</p>
+                </div>`;
+            companyBlock.appendChild(div);
+        });
+
+        // Append to main wrapper
+        itemsWrapper.appendChild(companyBlock);
+    }
 }
 
 function goOTP() {

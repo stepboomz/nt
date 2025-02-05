@@ -81,6 +81,7 @@ function renderSetp2List() {
                                 <p class="header-normal-text">หมายเลขบริการ</p>
                                 <p class="wrapper-big-header-text tel">${formatPhoneNumber(items.telNumber)}</p>
                             </div>
+                            <img class="arrow-icon" src="./assets/images/arrow-up-icon.svg" alt="" />
                         </div>
                         <div id="${collapseId}" class="collapse">
                             <div class="list-order-body-wrapper">

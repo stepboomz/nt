@@ -17,6 +17,22 @@ addEventListener("DOMContentLoaded", (event) => {
     conditionBtn.addEventListener("click", () => {
         openModalCondition();
     })
+
+    let closeConsentButton = document.getElementById('consent-close');
+    closeConsentButton.addEventListener('click', () => {
+        closeConsentModal();
+    });
+
+    let arrow = document.querySelector('.dropdown-chosen .arrow-down');
+    let checkDropdown = document.getElementById('touch');
+
+    checkDropdown.addEventListener('change', function () {
+        if (this.checked) {
+            arrow.classList.add('active');
+        } else {
+            arrow.classList.remove('active');
+        }
+    });
 });
 
 function toggleBtn() {
@@ -35,20 +51,37 @@ function toggleBtn() {
             const checkbox = document.getElementById("concent");
             updateButtonState();
             checkbox.addEventListener("change", updateButtonState);
+            setPlaceholder();
         });
     });
 }
 
+function setPlaceholder() {
+    let textSwap = document.querySelector('.text-swap.show');
+    let inputs = document.querySelectorAll('.in-block');
+    let placeholder;
+    inputs.forEach(input => {
+        if (textSwap && textSwap.textContent.trim() === 'หมายเลขบริการ') {
+            placeholder = 'กรุณากรอกหมายเลขบริการ';
+        } else {
+            placeholder = 'กรุณากรอกรหัสลูกค้า';
+        }
+        input.placeholder = placeholder;
+    });
+}
+
 function toggleDropdown() {
+    let arrow = document.querySelector('.dropdown-chosen .arrow-down');
     document.querySelectorAll('.dropdown-chosen-list-wrapper').forEach((button, index) => {
         button.addEventListener('click', function () {
             const text = this.querySelector('.dropdown-chosen .wrapper-desc-text').innerHTML;
             document.querySelector('.dropdown-chosen label').innerHTML = text;
             document.getElementById('touch').checked = false;
-
             let swapText = document.querySelectorAll('.text-swap');
             swapText.forEach(txt => txt.classList.remove('show'));
             swapText[index].classList.add('show');
+            arrow.classList.remove('active');
+            setPlaceholder();
         });
     });
 }
@@ -63,9 +96,10 @@ function addInputBlock() {
         if (inputLenght.length <= 2) {
             let newInputWrapper = document.createElement('div');
             newInputWrapper.classList.add('inputs-wrapper');
+
             newInputWrapper.innerHTML = `
                 <div class="input-wrapper">
-                    <input class="in-block" type="text" oninput="onInputNumber(this)">
+                    <input class="in-block" type="text" placeholder="" oninput="onInputNumber(this)">
                     <button type="button" class="in-block-btn remove">
                         <img class="in-block-icon" src=${removeSrc} alt="icon">
                     </button>
@@ -76,7 +110,9 @@ function addInputBlock() {
             let removeBtn = newInputWrapper.querySelector('.in-block-btn.remove');
             removeBtn.addEventListener('click', () => {
                 newInputWrapper.remove();
+                errorType = [];
             });
+            setPlaceholder();
         }
     });
 }
@@ -105,6 +141,11 @@ function onInputNumber(input) {
 function openModalCondition() {
     $('#modal-consent').modal();
     $('#modal-consent').modal('show');
+}
+
+function closeConsentModal() {
+    $('#modal-consent').modal();
+    $('#modal-consent').modal('hide');
 }
 
 // ======================================================= validation part =======================================================
@@ -151,13 +192,13 @@ submitButton.addEventListener('click', () => {
     if (swapText === 'หมายเลขบริการ') {
         checkServiceNumber();
     } else {
-        checkMemberNumber();
+        checkNumbers();
     }
     if (errorType.length > 0 && errorType.every(num => num === 0)) {
         window.location.href = './quick_pay2.html';
     }
-
 })
+
 
 //  call api member number
 function checkNumbers() {
@@ -180,6 +221,7 @@ function checkServiceNumber() {
         let inputVal = input.value.trim();
         if (memberNumber.includes(inputVal)) {
             removeError(index);
+            errorType[index] = 0;
         } else if (inputVal !== "") {
             addError("กรุณาตรวจสอบหมายเลขใหม่อีกครั้ง", index);
         }

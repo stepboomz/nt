@@ -17,6 +17,16 @@ addEventListener("DOMContentLoaded", (event) => {
     openExample.addEventListener("click", () => {
         openModalExample();
     })
+
+    let closeExampleButton = document.getElementById('example-close');
+    closeExampleButton.addEventListener('click', () => {
+        closeExampleModal();
+    });
+
+    let closeConsentButton = document.getElementById('consent-close');
+    closeConsentButton.addEventListener('click', () => {
+        closeConsentModal();
+    });
 });
 
 function addInputBlock() {
@@ -31,7 +41,7 @@ function addInputBlock() {
             newInputWrapper.classList.add('inputs-wrapper');
             newInputWrapper.innerHTML = `
                 <div class="input-wrapper">
-                    <input class="in-block" type="text" oninput="onInputNumber(this)">
+                    <input class="in-block" type="text" placeholder="กรุณากรอกหมายเลขบริการ / รหัสลูกค้า" oninput="onInputNumber(this)">
                     <button type="button" class="in-block-btn remove">
                         <img class="in-block-icon" src=${removeSrc} alt="icon">
                     </button>
@@ -42,6 +52,7 @@ function addInputBlock() {
             let removeBtn = newInputWrapper.querySelector('.in-block-btn.remove');
             removeBtn.addEventListener('click', () => {
                 newInputWrapper.remove();
+                errorType = [];
             });
         }
     });
@@ -76,6 +87,16 @@ function openModalCondition() {
 function openModalExample() {
     $('#modal-example').modal();
     $('#modal-example').modal('show');
+}
+
+function closeConsentModal() {
+    $('#modal-consent').modal();
+    $('#modal-consent').modal('hide');
+}
+
+function closeExampleModal() {
+    $('#modal-example').modal();
+    $('#modal-example').modal('hide');
 }
 
 // ======================================================= validation part =======================================================
