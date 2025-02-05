@@ -262,7 +262,7 @@ fieldset,
   border-radius: 25px;
   border: 1px solid #000000;
   padding: 10px 20px;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
 }
 
 .upload-block {
@@ -285,7 +285,7 @@ input[type="file"] {
   width: 100%;
   background-color: #FCCC03;
   border-radius: 25px;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   margin-left: 0.5rem;
 }
 
@@ -380,6 +380,12 @@ input[type="file"] {
 .checkbox-main p {
   line-height: 1.2 !important;
 }
+
+.file-error,
+  .error-message,
+  .file-size {
+    font-size: 1.12rem;
+  }
 
 
 @media (min-width: 375px) {
@@ -510,7 +516,17 @@ input[type="file"] {
   }
 
   .notice-text {
-    font-size: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .uploading .desc-text {
+    font-size: 1.1rem;
+  }
+
+  .file-error,
+  .error-message,
+  .file-size {
+    font-size: 1.1rem;
   }
 }
 

@@ -1,5 +1,6 @@
-let object = new Array(4).fill({});  // Initialize array with 4 empty objects
+let object = new Array(4).fill({});  // Initialize array with 4 empty objects to collect files upload
 const MAX_FILE_SIZE = 20 * 1024 * 1024;
+
 
 let pngSuccessImgSrc = './assets/images/png_success.svg';
 let jpgSuccessImgSrc = './assets/images/jpg_success.svg';
@@ -44,8 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("input[type='file']").forEach((input, index) => {
         input.addEventListener("change", function () {
             const file = this.files[0];
-            const allowedTypes = ["image/png", "image/jpeg", "image/jpg", "application/pdf"];
-            console.log(file.type);
             if (file) {
                 // Check file size
                 if (file.size > MAX_FILE_SIZE) {
@@ -100,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 uploadWrapper.style.display = "none";
                 let fileIcon = pdfSuccessImgSrc;
                 let fileName = file.name;
+                const allowedTypes = ["image/png", "image/jpeg", "image/jpg", "application/pdf"];
 
                 if (file.type === "image/png") {
                     fileIcon = pngSuccessImgSrc;
@@ -108,18 +108,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else if (file.type === "application/pdf") {
                     fileIcon = pdfSuccessImgSrc;
                 }
-
-                if (!allowedTypes.includes(file.type)) {
+                // console.log(allowedTypes.includes(file.type))
+                if (allowedTypes.includes(file.type) === false) {
+                    uploadResult.classList.add('active');
                     uploadResult.innerHTML = `
                     <div class="file-wrapper">
                         <div class="file-image-wrapper">
                             <img src="${pngFailureImgSrc}" alt="File">
                         </div>
                         <div class="file-text-wrapper">
-                            <p class="desc-text">${file.name}</p>
+                            <p class="desc-text">${fileName}</p>
                             <div class="failure">
                                 <img src="${alertIconSrc}" alt="alert">
-                                <p class="desc-text file-size red-text">ขนาดไฟล์ของคุณใหญ่เกินไป</p>
+                                <p class="desc-text file-size red-text">รองรับไฟล์ .pdf , .jpg หรือ .png เท่านั้น</p>
                             </div>
                         </div>
                     </div>
@@ -144,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     <img src="${fileIcon}" alt="File">
                                 </div>
                                 <div class="file-text-wrapper uploading">
-                                    <p class="desc-text">${file.name}</p>
+                                    <p class="desc-text">${fileName}</p>
                                     <div class="upload-progress">
                                         <div class="progress-bar"></div>
                                     </div>
@@ -160,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     handleErrorsRemove(index);
 
                     // Simulate file upload with progress bar
-                    simulateUploadProgress(uploadResult.querySelector(".progress-bar"), uploadResult);
+                    simulateUploadProgress(uploadResult.querySelector(".progress-bar"), uploadResult ,uploadResult.querySelector('.delete-btn img'));
 
                     // Store file data in the object
                     object[index] = {
@@ -241,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 numberIsValid = true;
             }
         } else {
-            showError(telNumberInput, "กรุณากรอกหมายเลขโทรศัพท์ให้ถูกต้อง", 3);
+            showError(telNumberInput, "กรุณากรอกหมายเลขโทรศัพท์", 3);
             numberIsValid = false;
         }
 
@@ -253,17 +254,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Function to simulate file upload progress
-function simulateUploadProgress(progressBar, uploadResult) {
+function simulateUploadProgress(progressBar, uploadResult, binImg) {
     let progress = 0;
     const interval = setInterval(() => {
         if (progress < 100) {
             progress += 5;
             progressBar.style.width = progress + "%";
+            binImg.src = closeIconSrc;
         } else {
             clearInterval(interval);
             // After upload completes, show file size
             uploadResult.querySelector('.upload-progress').style.display = 'none';
             uploadResult.querySelector(".file-size").style.display = "block";
+            binImg.src = binIconSrc;
         }
     }, 200);
 }
@@ -326,7 +329,7 @@ function showError(input, message, index) {
     } else {
         errorMessage.classList.add("error-message", "red-text");
     }
-    errorMessage.style.fontSize = '1rem';
+    // errorMessage.style.fontSize = '1rem';
     errorMessage.textContent = message;
     input.parentElement.appendChild(errorMessage);
 }
