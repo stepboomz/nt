@@ -488,6 +488,18 @@ input[type="file"] {
   .column .input-wrapper.last {
     margin-top: 0;
   }
+
+  .desc-text {
+    font-size: var(--desc-size2);
+  }
+
+  .custom-file-upload p {
+    font-size: var(--desc-size);
+  }
+
+  .notice-text {
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (max-width: 460px) {

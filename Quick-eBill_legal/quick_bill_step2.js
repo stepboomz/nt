@@ -44,12 +44,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("input[type='file']").forEach((input, index) => {
         input.addEventListener("change", function () {
             const file = this.files[0];
-            console.log(file);
+            const allowedTypes = ["image/png", "image/jpeg", "image/jpg", "application/pdf"];
+            console.log(file.type);
             if (file) {
                 // Check file size
                 if (file.size > MAX_FILE_SIZE) {
-                    let failureIcon = pdfFailureImgSrc;
 
+                    let failureIcon = pdfFailureImgSrc;
                     if (file.type === "image/png") {
                         failureIcon = pngFailureImgSrc;
                     } else if (file.type === "image/jpeg" || file.type === "image/jpg") {
@@ -57,34 +58,33 @@ document.addEventListener("DOMContentLoaded", () => {
                     } else if (file.type === "application/pdf") {
                         failureIcon = pdfFailureImgSrc;
                     } else {
-                        fileIcon = pdfFailureImgSrc;
-                        fileName = "Unsupported file type";
+                        failureIcon = pdfFailureImgSrc;
+                        // fileName = pdfFailureImgSrc;
                     }
                     const uploadWrapper = this.closest(".upload-wrapper");
                     const uploadResult = uploadWrapper.nextElementSibling;
                     uploadWrapper.style.display = "none";
-
                     uploadResult.classList.add('active');
+
                     uploadResult.innerHTML = `
-                        <div class="file-wrapper">
-                            <div class="file-image-wrapper">
-                                <img src="${failureIcon}" alt="File">
-                            </div>
-                            <div class="file-text-wrapper">
-                                <p class="desc-text">${file.name}</p>
-                                <div class="failure">
-                                    <img src="${alertIconSrc}" alt="alert">
-                                    <p class="desc-text file-size red-text">ขนาดไฟล์ของคุณใหญ่เกินไป</p>
+                            <div class="file-wrapper">
+                                <div class="file-image-wrapper">
+                                    <img src="${failureIcon}" alt="File">
+                                </div>
+                                <div class="file-text-wrapper">
+                                    <p class="desc-text">${file.name}</p>
+                                    <div class="failure">
+                                        <img src="${alertIconSrc}" alt="alert">
+                                        <p class="desc-text file-size red-text">ขนาดไฟล์ของคุณใหญ่เกินไป</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="delete-btn">
-                            <img src="${closeIconSrc}" alt="Delete">
-                        </div>
-                    `;
+                            <div class="delete-btn">
+                                <img src="${closeIconSrc}" alt="Delete">
+                            </div>
+                        `;
 
                     handleErrorsRemove(index);
-
                     // Handle file input reset after deletion
                     uploadResult.querySelector(".delete-btn").addEventListener("click", function () {
                         deleteFile(index, input, uploadWrapper, uploadResult);
@@ -109,43 +109,72 @@ document.addEventListener("DOMContentLoaded", () => {
                     fileIcon = pdfSuccessImgSrc;
                 }
 
-                uploadResult.classList.add('active');
-                uploadResult.innerHTML = `
+                if (!allowedTypes.includes(file.type)) {
+                    uploadResult.innerHTML = `
                     <div class="file-wrapper">
                         <div class="file-image-wrapper">
-                            <img src="${fileIcon}" alt="File">
+                            <img src="${pngFailureImgSrc}" alt="File">
                         </div>
-                        <div class="file-text-wrapper uploading">
+                        <div class="file-text-wrapper">
                             <p class="desc-text">${file.name}</p>
-                            <div class="upload-progress">
-                                <div class="progress-bar"></div>
+                            <div class="failure">
+                                <img src="${alertIconSrc}" alt="alert">
+                                <p class="desc-text file-size red-text">ขนาดไฟล์ของคุณใหญ่เกินไป</p>
                             </div>
-                            <!-- Hide file size during upload -->
-                            <p class="desc-text file-size" style="display: none;">${(file.size / (1024 * 1024)).toFixed(2)} MB</p>
                         </div>
                     </div>
                     <div class="delete-btn">
                         <img src="${closeIconSrc}" alt="Delete">
                     </div>
                 `;
+                    handleErrorsRemove(index);
+                    // Handle file input reset after deletion
+                    uploadResult.querySelector(".delete-btn").addEventListener("click", function () {
+                        deleteFile(index, input, uploadWrapper, uploadResult);
+                    });
 
-                handleErrorsRemove(index);
+                    this.value = "";  // Clear the file input value
+                    return;
+                }
+                else {
+                    uploadResult.classList.add('active');
+                    uploadResult.innerHTML = `
+                            <div class="file-wrapper">
+                                <div class="file-image-wrapper">
+                                    <img src="${fileIcon}" alt="File">
+                                </div>
+                                <div class="file-text-wrapper uploading">
+                                    <p class="desc-text">${file.name}</p>
+                                    <div class="upload-progress">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <!-- Hide file size during upload -->
+                                    <p class="desc-text file-size" style="display: none;">${(file.size / (1024 * 1024)).toFixed(2)} MB</p>
+                                </div>
+                            </div>
+                            <div class="delete-btn">
+                                <img src="${closeIconSrc}" alt="Delete">
+                            </div>
+                        `;
 
-                // Simulate file upload with progress bar
-                simulateUploadProgress(uploadResult.querySelector(".progress-bar"), uploadResult);
+                    handleErrorsRemove(index);
 
-                // Store file data in the object
-                object[index] = {
-                    fileName: file.name,
-                    fileType: file.type,
-                    fileSize: file.size,
-                    fileData: file
-                };
+                    // Simulate file upload with progress bar
+                    simulateUploadProgress(uploadResult.querySelector(".progress-bar"), uploadResult);
 
-                // Add event listener to delete button
-                uploadResult.querySelector(".delete-btn").addEventListener("click", function () {
-                    deleteFile(index, input, uploadWrapper, uploadResult);
-                });
+                    // Store file data in the object
+                    object[index] = {
+                        fileName: file.name,
+                        fileType: file.type,
+                        fileSize: file.size,
+                        fileData: file
+                    };
+
+                    // Add event listener to delete button
+                    uploadResult.querySelector(".delete-btn").addEventListener("click", function () {
+                        deleteFile(index, input, uploadWrapper, uploadResult);
+                    });
+                }
             }
         });
     });
@@ -236,7 +265,7 @@ function simulateUploadProgress(progressBar, uploadResult) {
             uploadResult.querySelector('.upload-progress').style.display = 'none';
             uploadResult.querySelector(".file-size").style.display = "block";
         }
-    }, 200); 
+    }, 200);
 }
 
 function deleteFile(index, input, uploadWrapper, uploadResult) {
@@ -346,7 +375,7 @@ function objectIndexIsEmpty(object) {
 
 function handleFormValidation(nameIsValid, surnameIsValid, numberIsValid, object, redirectUrl) {
     if (nameIsValid && surnameIsValid && numberIsValid && objectIndexIsEmpty(object) === false) {
-        window.location.href = redirectUrl;  
+        window.location.href = redirectUrl;
     } else {
         handleErrors(object);
     }
@@ -369,6 +398,6 @@ function handleErrorsRemove(index) {
     const uploadWrapper = document.querySelectorAll(".upload-file");
     const errorMessage = uploadWrapper[index].querySelector('.file-error');
     if (errorMessage) {
-        errorMessage.remove();  
+        errorMessage.remove();
     }
 }

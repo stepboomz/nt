@@ -1,5 +1,6 @@
 let otp = '1234';
 let otpRef = 'AFGHA';
+let telValue = document.querySelector('.tel-in-block').value;
 
 addEventListener("DOMContentLoaded", (event) => {
     genTelItemsBlock();
