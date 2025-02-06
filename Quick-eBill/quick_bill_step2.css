@@ -285,7 +285,7 @@ p {
     width: 100%;
   }
   .info-value {
-    color: #666;
+    color: #666 !important;
     text-align:start !important;
     font-size: 1rem;
   }
