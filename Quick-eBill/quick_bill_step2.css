@@ -349,20 +349,21 @@ p {
 .info-label {
   flex: 1;
   color: #333;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .info-value {
   flex: 1;
   color: #333;
   text-align: right;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
 }
 
 .checkbox-container {
   /* margin: 1rem 2rem;
   padding: 0 1rem; */
-  font-size: 0.95rem;
+  font-size: 1.2rem;
 }
 
 .checkbox-container label {
