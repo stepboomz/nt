@@ -19,7 +19,7 @@ body {
   margin-left: 0px !important;
 }
 
-.content-terms{
+.content-terms {
   font-weight: bold;
 }
 
@@ -51,15 +51,13 @@ p {
   left: 0;
 }
 
-
-
 .content-main {
   background-color: lightgray;
   min-height: calc(100vh - 171px);
   width: 100%;
   padding: 1rem 0;
   background-size: cover;
-  background-image: url('./assets/images/BG.png');
+  background-image: url("./assets/images/BG.png");
 }
 
 .content-main-wrapper {
@@ -162,14 +160,14 @@ p {
 }
 
 .eservice-bill-b {
-    width: 130px;
-    height: 35px;
-    background: #2ebf9b;
-    background: linear-gradient(245deg, #2ebf9b 0%, #009896 100%);
-    display: grid;
-    place-content: center;
-    border-radius: 20px;
-    margin-bottom: 10px;
+  width: 130px;
+  height: 35px;
+  background: #2ebf9b;
+  background: linear-gradient(245deg, #2ebf9b 0%, #009896 100%);
+  display: grid;
+  place-content: center;
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
 
 .eservice-bill-b .bill-b-text {
@@ -236,7 +234,7 @@ p {
     top: -1rem;
     right: 0;
   }
-  
+
   .content-main {
     min-height: calc(100vh - 144px);
   }
@@ -259,27 +257,23 @@ p {
     top: -1rem;
     right: -1rem;
   }
-.form-label{
-  font-size: 21px !important;
-  display: block;
-  font-weight: bold;
-  margin-bottom: 8px;
-  /* word-wrap: break-word !important; */
-}
-.modal-content {
-  background-color: white;
-  margin: 80% auto !important; 
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 600px;
-  position: relative;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center; 
-}
-
-
-
-
+  .form-label {
+    font-size: 21px !important;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    /* word-wrap: break-word !important; */
+  }
+  .modal-content {
+    background-color: white;
+    margin: 80% auto !important;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
 
   .header-block-wrapper .header1-block {
     padding-top: 1rem;
@@ -353,7 +347,6 @@ p {
   margin-top: 16px;
 }
 
-
 .form-group input:focus {
   outline: none;
   border-color: #ffd700;
@@ -412,13 +405,13 @@ p {
   color: #333;
 }
 
-
 .toggle-icon {
   width: 20px;
   height: 20px;
   position: relative;
   transition: transform 0.3s ease;
 }
+
 .toggle-icon::before {
   content: "";
   position: absolute;
@@ -426,12 +419,13 @@ p {
   height: 12px;
   border-right: 2px solid #666;
   border-bottom: 2px solid #666;
-  transform: rotate(45deg);
+  transform: rotate(-135deg);
   transition: transform 0.3s ease;
 }
+
 .toggle-icon.collapsed::before {
-  transform: rotate(-135deg);
-  top: 6px;
+  transform: rotate(45deg);
+  /* top: 6px; */
 }
 .collapsible-content {
   padding: 20px;
@@ -511,13 +505,13 @@ p {
 
 .modal-content {
   background-color: white;
-  margin: 15% auto; 
+  margin: 15% auto;
   padding: 20px;
   border-radius: 8px;
   max-width: 600px;
   position: relative;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center; 
+  text-align: center;
 }
 
 .close-button {
