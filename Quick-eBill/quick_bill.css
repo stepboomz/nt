@@ -266,6 +266,16 @@ p {
   margin-bottom: 8px;
   /* word-wrap: break-word !important; */
 }
+.modal-content {
+  background-color: white;
+  margin: 80% auto !important; 
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center; 
+}
 
 
 
@@ -496,17 +506,18 @@ p {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .modal-content {
   background-color: white;
-  margin: 30% auto;
+  margin: 15% auto; 
   padding: 20px;
   border-radius: 8px;
   max-width: 600px;
   position: relative;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center; 
 }
 
 .close-button {
