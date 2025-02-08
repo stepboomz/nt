@@ -8,13 +8,6 @@ addEventListener("DOMContentLoaded", (event) => {
     cancelBtn();
 
     let inputs = document.querySelectorAll('.block-register');
-    let closeModalBtn = document.querySelectorAll('.close-modal-btn');
-    closeModalBtn.forEach(closeM => {
-        closeM.addEventListener('click', () => {
-            closeModal();
-        })
-    })
-
 
     let otpSkipBtn = document.getElementById('otp-skip-register');
     otpSkipBtn.addEventListener('click', () => {
@@ -52,8 +45,8 @@ addEventListener("DOMContentLoaded", (event) => {
                 if (stringData === otp) {
                     console.log('complete');
                     removeAlertOTP();
-                    window.location.href = "./special_bill3_template1.html";
-                    // window.location.href = "./special_bill3_template2.html";
+                    // window.location.href = "./quick_pay3_template1.html";
+                    window.location.href = "./quick_pay3_template2.html";
                 } else {
                     console.log('otp incorrect');
                     addAlert('รหัสยืนยันไม่ถูกต้อง', 0);
@@ -100,7 +93,7 @@ let timerInterval;
 function cancelBtn() {
     let cancelBtn = document.querySelector('.nextpage2-cancel');
     cancelBtn.addEventListener('click', () => {
-        window.location.href = './special_bill1.html';
+        window.location.href = './quick_pay1.html';
     })
 }
 
@@ -111,7 +104,7 @@ function formatPhoneNumber(number) {
 
 function genTelItemsBlock() {
     let itemsWrapper = document.getElementById('items-wrapper');
-    itemsWrapper.innerHTML = ''; 
+    itemsWrapper.innerHTML = '';
 
     // Group data by copName
     let groupedData = {};
@@ -132,7 +125,7 @@ function genTelItemsBlock() {
         divCompany.classList.add('text-wrapper', 'space-top');
         divCompany.innerHTML = `
             <p class="wrapper-desc-text">${copName}</p>`;
-        
+
         companyBlock.appendChild(divCompany);
 
         // Add phone numbers
@@ -163,20 +156,17 @@ function goOTP() {
 
 }
 
-function setPhoneNumberRefOTPBlock() {
-    let telValue = document.querySelector('.tel-in-block').value.trim();
-    let refCode = document.getElementById('ref-code');
-    let phoneNumber = document.getElementById('number-phone-register');
-    phoneNumber.innerHTML = telValue;
-    refCode.innerHTML = otpRef;
-}
-
 function checkTelError() {
     let tel = document.querySelector('.tel-in-block').value;
     if (tel[0] !== '0') {
         addError('กรุณากรอกเบอร์โทรศัพท์ที่ขึ้นต้นด้วยเลข 0')
     } else {
-        openModalOTP();
+        document.querySelector('.otp-wrapper').classList.add('active');
+        blockOTPEnabled();
+        startCountdown();
+        setTimeout(() => {
+            firstFocus();
+        }, 500)
     }
 }
 
@@ -220,24 +210,6 @@ function addError(text) {
     }
 }
 
-// register OTP
-function openModalOTP() {
-    $('#otpModal').modal();
-    $('#otpModal').modal('show');
-    setPhoneNumberRefOTPBlock();
-    blockOTPEnabled();
-    startCountdown();
-    setTimeout(() => {
-        firstFocus();
-    }, 500)
-
-}
-
-function closeModal() {
-    $('.modal').modal();
-    $('.modal').modal('hide');
-    removeonlyBlockAlert();
-}
 
 function blockOTPDisabled() {
     let inputs = document.querySelectorAll('.block-register');
@@ -285,7 +257,6 @@ function updateCountdown() {
 
 function toggleOTPskip() {
     let otpSkipWrapper = document.querySelectorAll('.otp-skip-wrapper');
-    let otpSkipBtn = document.getElementById('register02progress');
     if (countdownSeconds == 0) {
         otpSkipWrapper.forEach(wrapper => {
             wrapper.style.display = 'flex';
@@ -295,7 +266,7 @@ function toggleOTPskip() {
         otpSkipWrapper.forEach(wrapper => {
             wrapper.style.display = 'none';
         })
-        otpSkipBtn.disabled = true;
+        // otpSkipBtn.disabled = true;
     }
 }
 

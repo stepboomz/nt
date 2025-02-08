@@ -152,7 +152,7 @@ function checkMemberNumber() {
     let inputBlocks = document.querySelectorAll(".input-wrapper .in-block");
     inputBlocks.forEach((input, index) => {
         let inputVal = input.value.trim();
-        if (memberNumber.includes(inputVal)) {
+        if (memberNumber.includes(inputVal) || inputVal === "") {
             removeError(index);
             errorType[index] = 0;
         } else if (inputVal !== "") {

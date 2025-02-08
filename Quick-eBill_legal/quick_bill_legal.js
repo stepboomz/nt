@@ -69,7 +69,7 @@ function validateForm(event) {
     }
 
     if (isValid) {
-        window.location.href = "quick_bill_step2.html";
+        window.location.href = "quick_bill_legal_step2.html";
     }
 
     return isValid;

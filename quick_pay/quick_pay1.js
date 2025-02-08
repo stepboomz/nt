@@ -205,7 +205,7 @@ function checkNumbers() {
     let inputBlocks = document.querySelectorAll(".input-wrapper .in-block");
     inputBlocks.forEach((input, index) => {
         let inputVal = input.value.trim();
-        if (memberNumber.includes(inputVal)) {
+        if (memberNumber.includes(inputVal) || inputVal === "") {
             removeError(index);
             errorType[index] = 0;
         } else if (inputVal !== "") {
@@ -219,8 +219,11 @@ function checkServiceNumber() {
     let inputBlocks = document.querySelectorAll(".input-wrapper .in-block");
     inputBlocks.forEach((input, index) => {
         let inputVal = input.value.trim();
-        if (memberNumber.includes(inputVal)) {
+        if (memberNumber.includes(inputVal) || inputVal === "") {
             removeError(index);
+            if(inputVal === "") {
+                errorType[index] = 0;
+            }
             errorType[index] = 0;
         } else if (inputVal !== "") {
             addError("กรุณาตรวจสอบหมายเลขใหม่อีกครั้ง", index);

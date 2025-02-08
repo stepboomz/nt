@@ -711,6 +711,18 @@ label {
     justify-content: center;
 }
 
+.otp-wrapper {
+    max-width: 326px;
+    margin: auto;
+    display: none;
+}
+
+.otp-wrapper.active {
+    max-width: 326px;
+    margin: auto;
+    display: block;
+}
+
 .input-otp-wrapper {
     display: flex;
     justify-content: space-between;
@@ -835,6 +847,11 @@ label {
     text-align: center;
     margin-top: 0.5rem;
     margin-bottom: 0.25rem;
+}
+
+.diff-otp .login-pasw-container {
+    width: 80%;
+    margin: auto;
 }
 
 #countdown,
@@ -1144,6 +1161,10 @@ label {
 .warning-wrap .warning-img,
 .contact-wrap .contact-img {
     margin-right: 0.5rem;
+}
+
+.mobile-show {
+    display: none;
 }
 
 /* =========== */
@@ -1507,5 +1528,9 @@ label {
 
     .header-block-wrapper .header1-block .step-wrapper {
         width: 90%;
+    }
+
+    .mobile-show {
+        display: block;
     }
 }
