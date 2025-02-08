@@ -269,7 +269,7 @@ function clearAllCheckBox() {
 function cancelBtnAddListener() {
     let cancelBtn = document.querySelector('.nextpage3-cancel');
     cancelBtn.addEventListener('click', () => {
-        window.location.href = './quick_pay2.html';
+        window.location.href = './quick_pay2_diffOTP.html';
     })
 }
 
