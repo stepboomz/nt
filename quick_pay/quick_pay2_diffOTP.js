@@ -12,7 +12,7 @@ addEventListener("DOMContentLoaded", (event) => {
     let otpSkipBtn = document.getElementById('otp-skip-register');
     otpSkipBtn.addEventListener('click', () => {
         clearInterval(countdownSeconds);
-        countdownSeconds = 59;
+        countdownSeconds = 179;
         startCountdown();
         removeAlertOTP();
         blockOTPEnabled();
@@ -87,7 +87,7 @@ let countdownElement = document.getElementById('countdownRegister');
 let firstInput = document.querySelector('.block-register');
 
 let countdownStart = false
-let countdownSeconds = 10;
+let countdownSeconds = 180;
 let timerInterval;
 
 function cancelBtn() {
@@ -235,7 +235,7 @@ function removeonlyBlockAlert() {
 
 function startCountdown() {
     countdownStart = true;
-    countdownSeconds = 10;
+    countdownSeconds = 180;
     clearInterval(timerInterval);
     updateCountdown();
     timerInterval = setInterval(updateCountdown, 1000);
@@ -243,7 +243,7 @@ function startCountdown() {
 
 function updateCountdown() {
     toggleOTPskip();
-    let seconds = countdownSeconds % 60;
+    let seconds = countdownSeconds % 180;
     countdownElement.textContent = seconds.toString().padStart(2, '0');
 
     if (countdownSeconds <= 0) {
