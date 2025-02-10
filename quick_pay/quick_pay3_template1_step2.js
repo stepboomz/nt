@@ -437,7 +437,7 @@ function updateSubmitBtn() {
         nextPageBtn.classList.remove('disabled');
         nextPageBtn.disabled = false;
         nextPageBtn.addEventListener('click', () => {
-            window.location.href = './../acknowledgpage/acknowlegd_complete.html';
+            window.location.href = './acknowledgpage/acknowlegd_complete.html';
         })
     } else {
         nextPageBtn.classList.add('disabled');

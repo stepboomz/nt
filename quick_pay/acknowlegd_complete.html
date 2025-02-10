@@ -74,19 +74,24 @@
         </div>
     </header>
     <div class="span-menu"></div>
-    
+
+
     <div class="content-main">
         <div class="containernopad content-main-wrapper">
             <div class="content-body-block body-block-warpper">
                 <div class="image-wrapper text-center">
-                    <img src="./assets/images/incomplete.svg" alt="">
+                    <img src="./assets/images/complete.svg" alt="">
                 </div>
                 <div class="header-ackno-wrapper">
-                    <p class="wrapper-header-text text-center">รายการถูกยกเลิก</p>
+                    <p class="wrapper-header-text text-center">รายการชำระสำเร็จ</p>
                 </div>
                 <div class="desc-ackno-wrapper space-top1">
                     <p class="wrapper-desc-text text-center">
-                        กรุณาทำรายการใหม่อีกครั้ง</p>
+                        ใบกำกับภาษี/ ใบเสร็จรับเงินอิเล็กทรอนิกส์ <br>
+                        (E-Tax/ E-Reciept) จะถูกส่งไปยัง <br class="desktop-hidden">
+                        SMS / EMAIL ที่ท่านให้ไว้ <br class="mobile-hidden">
+                    </p>
+                    <p class="wrapper-desc-text text-center">ขอบคุณที่ใช้บริการ</p>
                 </div>
                 <div class="button-ackno-wrapper">
                     <button type="button" id="gohome" class="">กลับหน้าหลัก</button>
@@ -111,5 +116,9 @@
     crossorigin="anonymous"></script> -->
     <script src="./../js/vendor/bootstrap.bundle.min.js"></script>
     <script src="./header.js"></script>
-    
+    <script>
+        document.getElementById('gohome').addEventListener('click', () => {
+            window.location.href = './quick_pay1.html';
+        })
+    </script>
 </html>

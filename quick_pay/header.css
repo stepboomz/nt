@@ -68,6 +68,7 @@
     cursor: pointer;
     z-index: 2;
     width: 33.33%;
+    background-color: rgba(0,0,0,0);
 }
 
 .header-desktop .logo-wrapper .lang-wrap-chosen {

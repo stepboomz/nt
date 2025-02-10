@@ -201,7 +201,7 @@ function updateSubmitBtn() {
         nextPageBtn.classList.remove('disabled');
         nextPageBtn.disabled = false;
         nextPageBtn.addEventListener('click', () => {
-            window.location.href = './../acknowledgpage/acknowlegd_incomplete.html';
+            window.location.href = './acknowledgpage/acknowlegd_incomplete.html';
         })
     } else {
         nextPageBtn.classList.add('disabled');
