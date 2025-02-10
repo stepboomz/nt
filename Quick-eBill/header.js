@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const languages = [
         {
             code: 'EN',
-            flag: './assets/images/header-footer-images/US-Flag.svg'
+            flag: './assets/images/header-footer-images/united-states-of-america.png'
         },
         {
             code: 'TH',
