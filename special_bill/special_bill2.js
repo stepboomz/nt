@@ -1,5 +1,5 @@
 let otp = '1234';
-let otpRef = 'AFGHA';
+let otpRef = 'AFGHN';
 let telValue = document.querySelector('.tel-in-block').value;
 
 addEventListener("DOMContentLoaded", (event) => {
@@ -19,7 +19,7 @@ addEventListener("DOMContentLoaded", (event) => {
     let otpSkipBtn = document.getElementById('otp-skip-register');
     otpSkipBtn.addEventListener('click', () => {
         clearInterval(countdownSeconds);
-        countdownSeconds = 59;
+        countdownSeconds = 179;
         startCountdown();
         removeAlertOTP();
         blockOTPEnabled();
@@ -94,7 +94,7 @@ let countdownElement = document.getElementById('countdownRegister');
 let firstInput = document.querySelector('.block-register');
 
 let countdownStart = false
-let countdownSeconds = 10;
+let countdownSeconds = 180;
 let timerInterval;
 
 function cancelBtn() {
@@ -164,7 +164,7 @@ function goOTP() {
 }
 
 function setPhoneNumberRefOTPBlock() {
-    let telValue = document.querySelector('.tel-in-block').value;
+    let telValue = document.querySelector('.tel-in-block').value.trim();
     let refCode = document.getElementById('ref-code');
     let phoneNumber = document.getElementById('number-phone-register');
     phoneNumber.innerHTML = telValue;
@@ -202,6 +202,7 @@ function onInputTel(input) {
     if (input.value.length > 10) {
         input.value = input.value.substring(0, 10);
     }
+    checkTel();
 }
 
 function addError(text) {
@@ -229,7 +230,7 @@ function openModalOTP() {
     setTimeout(() => {
         firstFocus();
     }, 500)
-    
+
 }
 
 function closeModal() {
@@ -262,7 +263,7 @@ function removeonlyBlockAlert() {
 
 function startCountdown() {
     countdownStart = true;
-    countdownSeconds = 10;
+    countdownSeconds = 180;
     clearInterval(timerInterval);
     updateCountdown();
     timerInterval = setInterval(updateCountdown, 1000);
@@ -270,7 +271,7 @@ function startCountdown() {
 
 function updateCountdown() {
     toggleOTPskip();
-    let seconds = countdownSeconds % 60;
+    let seconds = countdownSeconds % 180;
     countdownElement.textContent = seconds.toString().padStart(2, '0');
 
     if (countdownSeconds <= 0) {
@@ -340,7 +341,7 @@ function addAlert(msg, error) {
     blocks.forEach(function (input) {
         input.classList.add('alert');
         input.value = '';
-        if(error === 1) {
+        if (error === 1) {
             blockOTPDisabled();
         }
         // blockOTPDisabled();

@@ -131,7 +131,7 @@
                     </div>
                 </div>
             </div>
-            <div class="content-body-block body-block-warpper1">
+            <div class="content-body-block body-block-warpper1 diff-otp">
                 <div class="text-wrapper">
                     <p class="wrapper-big-header-text">ชำระให้</p>
                 </div>
@@ -149,6 +149,46 @@
                             oninput="onInputTel(this)">
                     </div>
                 </div>
+                <div class="otp-wrapper">
+                    <div class="header-inner-text forget" style=" margin-top: 1rem;">
+                        <p class="text-center wrapper-desc-text">ระบุ OTP ที่ได้รับทาง SMS <br class="mobile-show"> รหัสผ่านมีอายุการใช้งาน 3 นาที
+                        </p>
+                    </div>
+                    <div class="login-pasw-in-block  space-top1">
+                        <div class="login-pasw-container">
+                            <div class="input-otp-wrapper">
+                                <div class="otp-block">
+                                    <input type="text" class="block-register" maxlength="1">
+                                </div>
+                                <div class="otp-block">
+                                    <input type="text" class="block-register" maxlength="1">
+                                </div>
+                                <div class="otp-block">
+                                    <input type="text" class="block-register" maxlength="1">
+                                </div>
+                                <div class="otp-block">
+                                    <input type="text" class="block-register" maxlength="1">
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="otp-validate">
+                            <p class="otp-alert-text error-text otp-alert-register" id="otp-alert-register">
+                                รหัสยืนยันไม่ถูกต้อง</p>
+                        </div>
+                        <div class="otp-subtitle">
+                            <p>หากไม่ได้รับรหัส OTP กรุณารอ <span id="countdownRegister">59</span>
+                                วินาทีก่อนกดส่งอีกครั้ง </p>
+                        </div>
+                        <div class="otp-skip-wrapper" style="text-align: center;">
+                            <p> เพื่อคลิก</p>
+                            <button type="button" id="otp-skip-register" class="otp-skip">
+                                <img src="./assets/icons/optagain.svg" alt="">
+                                <p>ส่งอีกครั้ง</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <div class="quick-otp-btn-wrapper space-top1">
                     <button class="nextpage2-cancel" type="button">ยกเลิก</button>
                     <button class="nextpage2-submit disabled" disabled type="button">ตกลง</button>
@@ -159,82 +199,6 @@
                     <p class="wrapper-header-text text-center">NT Special Bill สำหรับชำระใบแจ้งค่าใช้บริการพิเศษ (TOT)
                         เท่านั้น
                     </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- modal-container OTP pass -->
-        <div class="modal fade register" id="otpModal" tabindex="-1" aria-labelledby="loginModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header-popup">
-                        <div class="close-btn-container">
-                            <!-- <button class="back-btn back-modal-btn" id="registerBack02">
-                                <img style="transform: rotate(180deg); width: 19px; height: 19px;" src="./assets/icons/arrow-right.svg" alt="">
-                                <p>ย้อนกลับ</p>
-                            </button> -->
-                        </div>
-                        <div class="close-btn-container">
-                            <button class="close-btn close-modal-btn">
-                                <img src="./assets/icons/modal-close.svg" alt="">
-                            </button>
-                        </div>
-                    </div>
-                    <div class="modal-body m-body">
-                        <div class="nodal-inner-image" style="text-align:center;">
-                            <img style="width: 50%; height: 100px;" src="./assets/images/ForgotPassNT1.svg" alt="" />
-                        </div>
-                        <div class="header-inner-text forget" style=" margin-top: 1rem;">
-                            <h3 class="head-text text-center">กรุณากรอกรหัส OTP</h3>
-                            <p class="text-center wrapper-desc-text">รหัสยืนยันตัวตน OTP จะถูกส่งไปทาง SMS ที่หมายเลข
-                                <span id="number-phone-register">0812342223</span> รหัสอ้างอิง : <span
-                                    id="ref-code">ABCD</span>
-                            </p>
-                        </div>
-                        <div class="login-pasw-in-block  space-top1">
-                            <div class="login-pasw-container">
-                                <div class="input-otp-wrapper">
-                                    <div class="otp-block">
-                                        <input type="text" class="block-register" maxlength="1">
-                                    </div>
-                                    <div class="otp-block">
-                                        <input type="text" class="block-register" maxlength="1">
-                                    </div>
-                                    <div class="otp-block">
-                                        <input type="text" class="block-register" maxlength="1">
-                                    </div>
-                                    <div class="otp-block">
-                                        <input type="text" class="block-register" maxlength="1">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="otp-validate">
-                                <p class="otp-alert-text error-text otp-alert-register" id="otp-alert-register">
-                                    รหัสยืนยันไม่ถูกต้อง</p>
-                            </div>
-
-                            <button type="button" class="forgetbtn btn modal-btn" id="register02progress"
-                                style="margin-top: 0.75rem;">
-                                <p class="modal-btn-text">ยืนยันตัวตน</p>
-                            </button>
-
-                            <div class="otp-subtitle">
-                                <p>หากไม่ได้รับรหัส OTP กรุณารอ <span id="countdownRegister">59</span>
-                                    วินาทีก่อนกดส่งอีกครั้ง </p>
-                            </div>
-                            <div class="otp-skip-wrapper" style="text-align: center;">
-                                <p> เพื่อคลิก</p>
-                                <button type="button" id="otp-skip-register" class="otp-skip">
-                                    <img src="./assets/icons/optagain.svg" alt="">
-                                    <p>ส่งอีกครั้ง</p>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                    </div>
                 </div>
             </div>
         </div>
@@ -256,6 +220,6 @@
 <script src="./../js/vendor/bootstrap.bundle.min.js"></script>
 <script src="./header.js"></script>
 <script src="./../js/vendor/jquery.min.js"></script>
-<script src="./special_bill2.js"></script>
+<script src="./special_bill2_diffOTP.js"></script>
 
 </html>

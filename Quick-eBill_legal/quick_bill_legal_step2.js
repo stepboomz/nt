@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Handle form validation and redirection
-        handleFormValidation(nameIsValid, surnameIsValid, numberIsValid, object, 'quick_bill_step3.html');
+        handleFormValidation(nameIsValid, surnameIsValid, numberIsValid, object, 'quick_bill_legal_step3.html');
     });
 
     // ============================================================
@@ -388,11 +388,16 @@ function handleErrors(object) {
     object.forEach((file, index) => {
         if (!file.fileData) {
             const fileInput = document.querySelectorAll("input[type='file']")[index];
+            if (!fileInput) return; 
             const uploadWrapper = fileInput.closest(".upload-wrapper");
-            let error = document.createElement('p');
-            error.classList.add('red-text', 'file-error');
-            error.innerHTML = 'กรุณาอัปโหลดไฟล์'
-            uploadWrapper.appendChild(error);
+            if (!uploadWrapper) return; 
+            let error = uploadWrapper.querySelector('.file-error');
+            if (!error) {
+                error = document.createElement('p');
+                error.classList.add('red-text', 'file-error');
+                uploadWrapper.appendChild(error);
+            }
+            error.innerHTML = 'กรุณาอัปโหลดไฟล์'; 
         }
     });
 }

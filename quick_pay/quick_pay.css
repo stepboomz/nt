@@ -152,6 +152,7 @@ label {
     -moz-box-shadow: 0px 0px 45px -3px rgba(0, 0, 0, 0.2);
 }
 
+
 .content-body-block-nobg {
     margin: 3rem auto 0;
     /* min-height: 400px; */
@@ -378,6 +379,11 @@ label {
 }
 
 .quick-otp-btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.diff-otp .quick-otp-btn-wrapper {
     display: flex;
     justify-content: space-between;
 }
@@ -674,6 +680,18 @@ label {
     justify-content: center;
 }
 
+.otp-wrapper {
+    max-width: 326px;
+    margin: auto;
+    display: none;
+}
+
+.otp-wrapper.active {
+    max-width: 326px;
+    margin: auto;
+    display: block;
+}
+
 .input-otp-wrapper {
     display: flex;
     justify-content: space-between;
@@ -798,6 +816,11 @@ label {
     text-align: center;
     margin-top: 0.5rem;
     margin-bottom: 0.25rem;
+}
+
+.diff-otp .login-pasw-container {
+    width: 80%;
+    margin: auto;
 }
 
 #countdown,
@@ -1097,6 +1120,10 @@ label {
 .warning-wrap .warning-img,
 .contact-wrap .contact-img {
     margin-right: 0.5rem;
+}
+
+.mobile-show {
+    display: none;
 }
 
 /* =========== */
@@ -1451,5 +1478,9 @@ label {
     .item-bill .wrapper-big-tel-text {
         font-size: var(--desc-size);
         font-weight: 500;
+    }
+
+    .mobile-show {
+        display: block;
     }
 }
