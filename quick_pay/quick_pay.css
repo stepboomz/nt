@@ -123,7 +123,7 @@ label {
     background-color: lightgray;
     min-height: calc(100vh - 171px);
     width: 100%;
-    padding: 4rem 0;
+    padding: 2rem 0;
     background-image: url('./assets/images/BG.png');
 }
 
@@ -521,7 +521,7 @@ label {
 .dropdown-chosen label {
     border: 1px solid black;
     width: 100%;
-    height: 50px;
+    height: 40px;
     border-radius: 25px;
     text-align: center;
     padding: 7.5px 20px 5px;
@@ -548,7 +548,7 @@ label {
 
 .slide li {
     background-color: #EEEEEE;
-    height: 50px;
+    height: 35px;
     display: flex;
 }
 
@@ -565,7 +565,7 @@ label {
 }
 
 #touch:checked+.slide {
-    height: 100px;
+    height: 70px;
     border: 1px solid black;
 }
 
@@ -1221,7 +1221,7 @@ label {
     .dropdown-chosen .arrow-down {
         position: absolute;
         right: 20px;
-        top: 20px;
+        top: 17px;
         transform: rotate(0deg);
         transition: 0.2s transform linear;
     }
@@ -1229,7 +1229,7 @@ label {
     .dropdown-chosen .arrow-down.active {
         position: absolute;
         right: 20px;
-        top: 20px;
+        top: 15px;
         transform: rotate(180deg);
         transition: 0.2s transform linear;
     }
@@ -1269,9 +1269,9 @@ label {
 }
 
 @media only screen and (max-width:768px) {
-    :root {
+    /* :root {
         --title-big-size: 1.2rem;
-    }
+    } */
 
     .wrapper-big-header-text {
         font-size: var(--title-big-size);
@@ -1308,7 +1308,7 @@ label {
 
     .header-block-wrapper .header1-block .header-block-header-image {
         position: absolute;
-        top: -2rem;
+        top: -1rem;
         right: -1rem;
     }
 
@@ -1445,8 +1445,8 @@ label {
     }
 
     .mock-cle {
-        width: 24px;
-        height: 24px;
+        width: 30px;
+        height: 30px;
     }
 
     .mock-cle img {
@@ -1454,12 +1454,16 @@ label {
         height: 14px;
     }
 
+    .header-block-wrapper .header1-block {
+        width: 100%;
+    }
+
     .header-block-wrapper .header1-block .step-wrapper {
-        width: 90%;
+        width: 92.5%;
     }
 
     .nt-bullet-line {
-        top: 30.5px;
+        top: 34.5px;
     }
 
     .header-block-wrapper .header1-block .step-wrapper .step .step-text {

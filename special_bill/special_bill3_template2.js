@@ -92,7 +92,7 @@ function renderList() {
         let collapseId = `collapseList${index + 1}`; 
 
         let element = `<div class="lists-order space-top1">
-                        <div type="button" class="list-order-header-wrapper collapsed" data-bs-toggle="collapse"
+                        <div type="button" class="list-order-header-wrapper" data-bs-toggle="collapse"
                             data-bs-target="#${collapseId}" aria-expanded="false" aria-controls="${collapseId}">
                             <div class="text-wrapper">
                                 <p class="wrapper-big-header-text">${items.companyName}</p>
@@ -103,7 +103,7 @@ function renderList() {
                             </div>
                             <img class="arrow-icon" src="./assets/images/arrow-up-icon.svg" alt="" />
                         </div>
-                        <div id="${collapseId}" class="collapse">
+                        <div id="${collapseId}" class="collapse show">
                             <div class="list-order-body-wrapper">
                                 <div class="list-header-wrapper">
                                     <div class="list-header first">
@@ -163,7 +163,7 @@ function renderList() {
             let list = `<div class="list-body-wrapper">
                             <div class="list-header first">
                                 <div class="checkbox-wrapper">
-                                    <input type="checkbox" id="${checkboxId}" data-index="${index}" data-bill="${billIndex}" />
+                                    <input type="checkbox" id="${checkboxId}" data-index="${index}" data-bill="${billIndex}" checked/>
                                 </div>
                             </div>
                             <div class="list-header first">

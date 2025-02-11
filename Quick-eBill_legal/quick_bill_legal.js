@@ -10,6 +10,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const icon = document.querySelector(".toggle-icon");
     if (content) content.classList.remove("collapsed");
     if (icon) icon.classList.remove("collapsed");
+
+    let openExample = document.querySelector('.example-link');
+    if (openExample) {
+        openExample.addEventListener('click', () => {
+            console.log('Open modal clicked');
+            showExample();
+        });
+    }
+
+    let closeModalBtn = document.querySelector('.close-button');
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', () => {
+            console.log('Close modal clicked');
+            closeExample();
+        });
+    }
 });
 
 // Service number validation
@@ -23,16 +39,6 @@ function validateIdNumber(input) {
     input.value = input.value.replace(/[^A-Za-z0-9]/g, "");
     checkFormValidity();
 }
-
-// Check if form is valid to enable/disable submit button
-// function checkFormValidity() {
-//   const serviceNumber = document.getElementById("serviceNumber").value.trim();
-//   const idNumber = document.getElementById("idNumber").value.trim();
-//   const submitBtn = document.getElementById("submitBtn");
-
-//   const isValid = serviceNumber && idNumber && idNumber.length >= 7 && idNumber.length <= 13;
-//   submitBtn.disabled = !isValid;
-// }
 
 // Form validation on submit
 function validateForm(event) {
@@ -75,22 +81,16 @@ function validateForm(event) {
     return isValid;
 }
 
-// Example modal functions
 function showExample() {
-    document.getElementById("exampleModal").style.display = "block";
+    $('#exampleModal').modal();
+    $('#exampleModal').modal('show');
 }
 
 function closeExample() {
-    document.getElementById("exampleModal").style.display = "none";
+    $('#exampleModal').modal();
+    $('#exampleModal').modal('hide');
 }
 
-// Close modal when clicking outside
-window.onclick = function (event) {
-    const modal = document.getElementById("exampleModal");
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-};
 
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("ebillForm");

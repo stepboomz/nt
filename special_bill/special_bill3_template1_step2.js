@@ -11,6 +11,7 @@ addEventListener("DOMContentLoaded", (event) => {
     }
 
     cancelBtnAddListener();
+    updateInitialCost();
 });
 
 // ====================== mock data =========================
@@ -79,7 +80,7 @@ function renderSetp2List() {
 
         if (hasNonEmptyVat) {
             let element = `<div class="lists-order space-top1">
-                        <div type="button" class="list-order-header-wrapper collapsed" data-bs-toggle="collapse"
+                        <div type="button" class="list-order-header-wrapper" data-bs-toggle="collapse"
                             data-bs-target="#${collapseId}" aria-expanded="false" aria-controls="${collapseId}">
                             <div class="text-wrapper">
                                 <p class="wrapper-big-header-text">${items.companyName}</p>
@@ -90,7 +91,7 @@ function renderSetp2List() {
                             </div>
                             <img class="arrow-icon" src="./assets/images/arrow-up-icon.svg" alt="" />
                         </div>
-                        <div id="${collapseId}" class="collapse">
+                        <div id="${collapseId}" class="collapse show">
                             <div class="list-order-body-wrapper">
                                 <div class="list-header-wrapper">
                                     <div class="list-header first">
@@ -175,7 +176,7 @@ function renderSetp2List() {
                     list = `<div class="list-body-wrapper">
                     <div class="list-header first">
                         <div class="checkbox-wrapper">
-                            <input type="checkbox" id="${checkboxId}" data-index="${index}" data-bill="${billIndex}" />
+                            <input type="checkbox" id="${checkboxId}" data-index="${index}" data-bill="${billIndex}" checked/>
                         </div>
                     </div>
                     <div class="list-header first">
@@ -239,7 +240,7 @@ function renderSetp2List() {
                     list = `<div class="list-body-wrapper">
                             <div class="list-header first">
                                 <div class="checkbox-wrapper">
-                                    <input type="checkbox" id="${checkboxId}" data-index="${index}" data-bill="${billIndex}" />
+                                    <input type="checkbox" id="${checkboxId}" data-index="${index}" data-bill="${billIndex}" checked/>
                                 </div>
                             </div>
                             <div class="list-header first">
@@ -294,7 +295,7 @@ function renderSetp2List() {
         }
         else {
             let element = `<div class="lists-order space-top1">
-                        <div type="button" class="list-order-header-wrapper collapsed" data-bs-toggle="collapse"
+                        <div type="button" class="list-order-header-wrapper" data-bs-toggle="collapse"
                             data-bs-target="#${collapseId}" aria-expanded="false" aria-controls="${collapseId}">
                             <div class="text-wrapper">
                                 <p class="wrapper-big-header-text">${items.companyName}</p>
@@ -305,7 +306,7 @@ function renderSetp2List() {
                             </div>
                             <img class="arrow-icon" src="./assets/images/arrow-up-icon.svg" alt="" />
                         </div>
-                        <div id="${collapseId}" class="collapse">
+                        <div id="${collapseId}" class="collapse show">
                             <div class="list-order-body-wrapper">
                                 <div class="list-header-wrapper">
                                     <div class="list-header first">
@@ -371,7 +372,7 @@ function renderSetp2List() {
                 let list = `<div class="list-body-wrapper">
                 <div class="list-header first">
                     <div class="checkbox-wrapper">
-                        <input type="checkbox" id="${checkboxId}" data-index="${index}" data-bill="${billIndex}" />
+                        <input type="checkbox" id="${checkboxId}" data-index="${index}" data-bill="${billIndex}" checked/>
                     </div>
                 </div>
                 <div class="list-header first">
@@ -446,6 +447,16 @@ function updateSubmitBtn() {
 }
 
 let cost = 0;
+
+function updateInitialCost() {
+    let checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    checkedBoxes.forEach((checkbox) => {
+        let billDataAttr = checkbox.getAttribute("data-bill");
+        updateSummCost(data[0].bill[billDataAttr], true);
+    });
+    updateSumToBlock(); 
+    updateSubmitBtn();
+}
 
 function updateSummCost(billData, isChecked) {
     let billCost = parseFloat(billData.cost) || 0;
