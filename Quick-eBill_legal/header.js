@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const languages = [
         {
             code: 'EN',
-            flag: './assets/images/header-footer-images/US-Flag.png'
+            flag: './assets/header-footer-images/US-Flag.png'
         },
         {
             code: 'TH',
-            flag: './assets/images/header-footer-images/thailand-flag.png'
+            flag: './assets/header-footer-images/thailand-flag.png'
         }
     ];
     let currentLangIndex = 0;

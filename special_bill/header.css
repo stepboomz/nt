@@ -126,7 +126,20 @@
     font-size: 1.4rem;
 }
 
+.nt-logo-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nt-logo-wrapper .nt-logo {
+    width: 80%;
+}
+
 @media only screen and (max-width:991px) {
+    .nt-logo-wrapper .nt-logo {
+        width: 60%;
+    }
+    
     .header-desktop {
         display: none;
     }

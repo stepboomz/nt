@@ -1126,6 +1126,7 @@ label {
     display: none;
 }
 
+
 /* =========== */
 
 @media (min-width: 375px) {
@@ -1188,7 +1189,7 @@ label {
 
     .header-block-wrapper .header1-block .header-block-header-image {
         position: absolute;
-        top: -2rem;
+        top: -1rem;
         right: 0;
     }
 
