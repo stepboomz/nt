@@ -1271,12 +1271,12 @@ label {
 
 @media only screen and (max-width:768px) {
     /* :root {
-        --title-big-size: 1.2rem;
+        --title-big-size: 1.4rem;
     } */
 
     .wrapper-big-header-text {
-        font-size: var(--title-big-size);
-        /* font-size: 1.5rem; */
+        /* font-size: var(--title-big-size); */
+        font-size: 1.4rem;
         font-weight: bold;
     }
 
@@ -1301,6 +1301,7 @@ label {
 @media only screen and (max-width:460px) {
     :root {
         --title-big-size-for-tel: 1.3rem;
+        --title-big-size: 1.4rem;
     }
 
     .content-main {
