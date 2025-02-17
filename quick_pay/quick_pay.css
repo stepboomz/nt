@@ -196,7 +196,7 @@ label {
 
 .header-block-wrapper .header1-block .header-block-header-image {
     position: absolute;
-    top: 6rem;
+    top: 3.5rem;
     right: 0;
 }
 
@@ -207,8 +207,8 @@ label {
 }
 
 .header-block-wrapper .header1-block .header-block-header-image img {
-    max-width: 263px;
-    max-height: 218px;
+    max-width: 283px;
+    max-height: 238px;
 }
 
 .header-block-wrapper .header1-block .step-wrapper {
